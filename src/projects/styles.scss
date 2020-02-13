@@ -1,0 +1,36 @@
+@import url('//db.onlinewebfonts.com/c/1db29588408eadbd4406aae9238555eb?family=Consolas');
+
+.repositories{
+    i {
+        color: rgb(121, 182, 242);
+    }
+    
+    a {
+        font-size: 15px;
+        color: rgb(250, 200, 99);
+        display: inherit;
+        line-height: 2.6;
+    }
+    
+    .repository {
+        background-color: rgb(40, 44, 52);
+        width: 700px;
+        padding: 6px 15px;
+        color: white;
+        font-family: Consolas, source-code-pro, Menlo, Monaco, Courier New, monospace;
+        border-radius: 20px;
+        line-height: .2;
+        font-size: 15px;
+        margin: 15px 0;
+    }
+    
+    p {
+        line-height: 1.2;
+        color: rgb(178, 178, 178);
+    }
+    
+    p:last-child {
+        color: rgb(252, 146, 158);
+    }     
+}
+
