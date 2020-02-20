@@ -1,12 +1,19 @@
 import React from 'react';
-import Projects from './projects';
-import Profile from './profile'
+
+import { ContextProvider } from './context/reducer'
+import Profile from './components/profile'
+import Projects from './components/projects';
+import Search from './components/search';
 
 function App() {
+
   return (
     <React.Fragment>
-      <Profile />
-      <Projects />
+      <ContextProvider>
+          <Profile />
+          <Search />
+          <Projects />
+      </ContextProvider>
     </React.Fragment>
   );
 }

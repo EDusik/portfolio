@@ -13,7 +13,6 @@ function Projects() {
 
     useEffect(() => {
         axios.get(`${state.url}${state.user}`).then(response => {
-            console.log(response.data);
             setState({profile: response.data});
         });
     // eslint-disable-next-line react-hooks/exhaustive-deps
