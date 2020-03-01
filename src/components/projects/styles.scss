@@ -28,6 +28,7 @@
         font-size: 15px;
         margin: 15px 15px;
         flex: 1 1 340px;
+        display: grid;
     }
     
     p {
@@ -36,8 +37,7 @@
     }
     
     p:last-child {
-        color: rgb(252, 146, 158);
-        display: inline-flex;
+        color: rgb(252, 146, 158);     
     }   
 }
 

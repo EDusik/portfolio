@@ -1,15 +1,13 @@
-import React, { createContext, useReducer } from "react";
-
-import { copyGlobalState } from "../utils";
+import React, { createContext, useReducer } from 'react';
 
 const initialContext = {
-    search: ""
+    search: ''
 }
 
 const Context = createContext({});
 
 const reducer = (state = initialContext, action) => {
-  const newState = copyGlobalState(state);
+  const newState = {...state}
   newState[action.name] = action.value;
   return newState;
 };
