@@ -1,16 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,500,700&display=swap');
 
 .profile {
-
     font-family: 'Open Sans', 'Roboto', 'sans-serif';
-    background-color:  #f2f5f6;
-    color: #172432;
-    
+    background-color:  #F2F5F6;
+    color: white;
+    text-align: center;
+    height: 70vh;
+    width: 100%;
+    position: relative;
+
     img {
-        border: solid 5px #172432;
+        border: solid 5px #B2B2B2;
         border-radius: 50%;
         width: 200px;
         height: 200px;
         background-color: white;
     } 
+
+    .bg-profile {
+        height: 70vh;
+        width: 100%;   
+        padding: 5vh 0px; 
+        position: absolute;         
+    }
+
+    #particles-js {
+        width: 100%;
+        height: 70vh;
+        background-image: linear-gradient(180deg, #141c3a, #fff);    
+        background-position: 50% 50%;    
+        position: absolute; 
+    }
 }

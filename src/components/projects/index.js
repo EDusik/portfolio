@@ -73,8 +73,8 @@ function Projects(query) {
                     state.showRepositories.map((repo) => {
                         return (
                             <div className='repository' key={repo.id}>
-                                <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>{repo.full_name}</a>
-                                <i>{repo.name}</i>
+                                <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>{repo.name}</a>
+                                <i>{repo.full_name}</i>
                                 <p>{emojis.unicode(repo.description)}</p>
                                 <p>{repo.language}</p>
                             </div>
