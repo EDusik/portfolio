@@ -29,13 +29,13 @@ function Projects() {
         <div className='profile'>
             <div id="particles-js"></div>
             <div className='bg-profile'>
-                <h2>{state.profile.name}</h2>
                 <img src={state.profile.avatar_url} alt={state.profile.login} />
-                <p>{state.profile.company}</p>
-                <p>{state.profile.location}</p>
-                <p>{state.profile.bio}</p>
-                <p>{state.email}</p>
-                <a href={state.profile.blog} target='_blank' rel='noopener noreferrer'>{state.profile.login}</a>
+                <h2>{state.profile.name}</h2>
+                <a href={state.profile.blog} target='_blank' rel='noopener noreferrer'>Developer</a>
+                <p className="bio">{state.profile.bio}</p>
+                {/* <p>{state.profile.location}</p>
+                <p>{state.profile.company}</p>              
+                <p>{state.email}</p> */}
             </div>
         </div>
     );
