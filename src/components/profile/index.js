@@ -1,8 +1,10 @@
+import Particles from 'react-particles-js';
 import React, { useEffect, useState } from 'react';
 
 import { getEmail, getUser } from '../../services/github-service';
 
 import './styles.scss';
+import config from '../../assets/json/particles.json';
 
 function Projects() {
 
@@ -27,11 +29,18 @@ function Projects() {
 
     return (
         <div className='profile'>
-            <div id="particles-js"></div>
+            <div id="particles-js">
+                <Particles 
+                    width="100%"
+                    height="80vh"
+                    params={config}
+                />
+            </div>           
             <div className='bg-profile'>
                 <img src={state.profile.avatar_url} alt={state.profile.login} />
                 <h2>{state.profile.name}</h2>
-                <a href={state.profile.blog} target='_blank' rel='noopener noreferrer'>Developer</a>
+                {/* <a href={state.profile.blog} target='_blank' rel='noopener noreferrer'>Developer</a> */}
+                <h3>Developer</h3>
                 <p className="bio">{state.profile.bio}</p>
                 {/* <p>{state.profile.location}</p>
                 <p>{state.profile.company}</p>              
