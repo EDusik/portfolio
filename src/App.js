@@ -4,6 +4,7 @@ import { ContextProvider } from './context/reducer'
 import Profile from './components/profile'
 import Projects from './components/projects';
 import Search from './components/search';
+import Footer from './components/footer';
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
           <Profile />
           <Search />
           <Projects />
+          <Footer />
       </ContextProvider>
     </React.Fragment>
   );

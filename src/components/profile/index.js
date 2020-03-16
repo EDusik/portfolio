@@ -32,7 +32,7 @@ function Projects() {
             <div id="particles-js">
                 <Particles 
                     width="100%"
-                    height="80vh"
+                    height="70vh"
                     params={config}
                 />
             </div>           

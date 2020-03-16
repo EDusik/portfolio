@@ -1,0 +1,39 @@
+@import "/public/css/all.css";
+
+.footer {
+    height: 20vh;
+    width: 100%;
+    background-color: #282c34;
+    padding-top: 8vh;
+    text-align: center;
+    margin-top: 15px;
+
+    a {  
+        color: #B2B2B2;
+        i {
+            font-size: 42px;
+            margin: 0px 5px;          
+        }
+       
+    }   
+    :hover {
+        cursor: pointer;
+        color: white;
+    } 
+}
+
+.copyright {
+    background-color: #20232a;
+    width: 100%;
+    text-align: center;
+    color: #999;
+    font-family: sans-serif;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: 14px;
+
+    strong {
+        color: white;
+        font-weight: 500;
+    }
+}
