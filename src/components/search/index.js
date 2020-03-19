@@ -14,14 +14,16 @@ function Search() {
     }
 
     return (
-        <div className='search'>
-            <input type='text' 
-                className='form-control form-control-lg' 
-                name=''   
-                onChange={(event)=> onChange(event.target.value)}
-                placeholder='Search...' 
-            />
-        </div>
+    
+            <div className='search'>
+                <input type='text' 
+                    className='form-control form-control-lg' 
+                    name=''   
+                    onChange={(event)=> onChange(event.target.value)}
+                    placeholder='Search...' 
+                />
+            </div>
+
     )
 
 }

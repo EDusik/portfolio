@@ -1,3 +1,4 @@
+import { Element } from 'react-scroll';
 import React, { useEffect, useState, useContext } from 'react';
 
 import { Context } from '../../context/reducer'
@@ -68,22 +69,24 @@ function Projects(query) {
 
     return (
         <React.Fragment>
-            <div className='repositories'>
-                {state.repositories && state.showRepositories.length > 0 ?
-                    state.showRepositories.map((repo) => {
-                        return (
-                            <div className='repository' key={repo.id}>
-                                <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>{repo.name}</a>
-                                <i>{repo.full_name}</i>
-                                <p>{emojis.unicode(repo.description)}</p>
-                                <p>{repo.language}</p>
-                            </div>
-                        );
-                    })
-                    :
-                    <p>No repository found</p>
-                }
-            </div>
+            <Element name="projects">   
+                <div className='repositories'>
+                    {state.repositories && state.showRepositories.length > 0 ?
+                        state.showRepositories.map((repo) => {
+                            return (
+                                <div className='repository' key={repo.id}>
+                                    <a href={repo.html_url} target='_blank' rel='noopener noreferrer'>{repo.name}</a>
+                                    <i>{repo.full_name}</i>
+                                    <p>{emojis.unicode(repo.description)}</p>
+                                    <p className='language'>{repo.language}</p>
+                                </div>
+                            );
+                        })
+                        :
+                        <p className='no-repo'>No repository found :(</p>
+                    }
+                </div>
+            </Element>
         </React.Fragment>
     )
 }
