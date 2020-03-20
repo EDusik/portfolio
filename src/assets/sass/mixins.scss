@@ -5,3 +5,15 @@
     -o-transition: all .5s ease;
     transition: all .5s ease;
 }
+
+@mixin font_primary {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@mixin font_secondary {
+    font-family: 'Open Sans', 'Roboto', 'sans-serif';
+}
+
+@mixin font_code {
+    font-family: Consolas, source-code-pro, Menlo, Monaco, Courier New, monospace;
+}

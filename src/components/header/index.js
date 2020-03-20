@@ -33,7 +33,7 @@ function Header() {
                         <ul>
                             <li>
                                 <Link 
-                                    activeClass='active' 
+                                    activeClass={!bottom ? 'active ' : 'remove'}
                                     to='about' spy={true} smooth={true} offset={-150} isDynamic={true} duration={1000} delay={50}>
                                         about
                                 </Link>

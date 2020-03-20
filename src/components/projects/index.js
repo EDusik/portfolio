@@ -83,7 +83,7 @@ function Projects(query) {
                             );
                         })
                         :
-                        <p className='no-repo'>No repository found :(</p>
+                        <p className='no-repo'>{emojis.unicode('No repository found :sob:')}</p>
                     }
                 </div>
             </Element>

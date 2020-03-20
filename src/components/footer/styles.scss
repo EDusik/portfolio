@@ -27,7 +27,7 @@
         width: 100%;
         text-align: center;
         color: $text_primary;
-        font-family: sans-serif;  
+        @include font_primary; 
         height: 42px;
         line-height: 3;
         font-size: 14px;

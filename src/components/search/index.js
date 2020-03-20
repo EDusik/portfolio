@@ -13,19 +13,15 @@ function Search() {
         dispatch({ name: 'search', value: value });
     }
 
-    return (
-    
-            <div className='search'>
-                <input type='text' 
-                    className='form-control form-control-lg' 
-                    name=''   
-                    onChange={(event)=> onChange(event.target.value)}
-                    placeholder='Search...' 
-                />
-            </div>
-
+    return (    
+        <div className='search'>
+            <input type='text' 
+                name='search'   
+                onChange={(event)=> onChange(event.target.value)}
+                placeholder='Search...' 
+            />
+        </div>
     )
-
 }
 
 export default Search;

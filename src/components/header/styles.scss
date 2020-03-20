@@ -10,7 +10,7 @@
     position: absolute;
     z-index: 1;
     width: 100%;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    @include font_primary;
     @include transition;
 
     .container {

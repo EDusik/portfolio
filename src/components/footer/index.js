@@ -25,7 +25,6 @@ function Footer() {
                 linkedin: 'https://www.linkedin.com/in/eduardo-dos-santos-dusik-095100120/'
             }));
         });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (      

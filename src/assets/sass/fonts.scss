@@ -1,3 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:300,400,500,700&display=swap');
-@import url('//db.onlinewebfonts.com/c/1db29588408eadbd4406aae9238555eb?family=Consolas');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@font-face {
+    font-family: 'roboto'; 
+    src: url('../fonts/roboto.css');
+}
+
+@font-face {
+    font-family: 'open-sans'; 
+    src: url('../fonts/open-sans.css');
+}
+
+
+@font-face {
+    font-family: 'consolas'; 
+    src: url('../fonts/consolas.css');
+}
+

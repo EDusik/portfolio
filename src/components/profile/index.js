@@ -2,7 +2,7 @@ import { Element } from 'react-scroll'
 import Particles from 'react-particles-js';
 import React, { useEffect, useState } from 'react';
 
-import { getEmail, getUser } from '../../services/github-service';
+import { getUser } from '../../services/github-service';
 
 import './styles.scss';
 import config from '../../assets/json/particles.json';
@@ -10,22 +10,13 @@ import config from '../../assets/json/particles.json';
 function Projects() {
 
     const [state, setState] = useState({
-        profile: {},
-        email:''
+        profile: {}
     });    
 
     useEffect(() => {
         getUser().then(response => {
             setState({profile: response.data});
         });
-
-        getEmail().then(response => {
-            setState(previousState => ({
-                ...previousState,
-                email: response.data[0].payload.commits[0].author.email,
-            }));
-        });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (     
@@ -38,11 +29,11 @@ function Projects() {
                         params={config}
                     />
                 </div>           
-                <div className='bg-profile'>
+                <div className='profile-details'>
                     <img src={state.profile.avatar_url} alt={state.profile.login} />
-                    <h2>{state.profile.name}</h2>
-                    <h3>Developer</h3>
-                    <p className="bio">{state.profile.bio}</p>
+                    <h1>{state.profile.name}</h1>
+                    <h2>Developer</h2>
+                    <p>{state.profile.bio}</p>
                 </div>
             </div>
         </Element>
