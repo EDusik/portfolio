@@ -1,7 +1,8 @@
 import React, { createContext, useReducer } from 'react';
 
 const initialContext = {
-    search: ''
+    search: '',
+    isLoading: true
 }
 
 const Context = createContext({});

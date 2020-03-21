@@ -27,11 +27,11 @@
         width: 100%;
         text-align: center;
         color: $text_primary;
-        @include font_primary; 
         height: 42px;
         line-height: 3;
         font-size: 14px;
-    
+        @include font_primary; 
+
         strong {
             color: $light;
             font-weight: 500;
