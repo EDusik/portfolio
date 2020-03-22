@@ -1,9 +1,13 @@
 import { Link } from 'react-scroll';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import Switch from 'react-switch';
 
 import './styles.scss';
+import { ThemeContext } from 'styled-components';
 
-function Header() {    
+function Header({toggleTheme}) { 
+    
+    const { name } = useContext(ThemeContext);   
     const [scroll, setScroll] = useState(false);
     const [bottom, setBottom] = useState(false);
     const navbarHeight = 56;
@@ -27,7 +31,7 @@ function Header() {
 
     return (
         <React.Fragment>
-            <header className={'header ' + (scroll ? 'color' : 'transparent')}>
+            <header className={'header ' + (scroll ? 'color' : 'transparent')}>    
                 <div className='container'>
                     <nav className='navbar'>
                         <ul>
@@ -52,8 +56,21 @@ function Header() {
                                         contact
                                 </Link>
                             </li>
-                        </ul>
-                    </nav>
+                        </ul>         
+                    </nav>    
+                    <div className="switch">
+                        <Switch 
+                            onChange={toggleTheme} 
+                            checked={name === 'dark'} 
+                            checkedIcon={false} 
+                            uncheckedIcon={false} 
+                            height={14} 
+                            width={32} 
+                            offColor="#999999" 
+                            handleDiameter={20} 
+                            onColor="#79B6F2"
+                        />    
+                    </div>                  
                 </div>
             </header>
         </React.Fragment>
