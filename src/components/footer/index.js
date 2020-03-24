@@ -31,7 +31,7 @@ function Footer() {
 
     return (      
         <>
-            {!context.isLoading ? 
+            {!context.isLoading && !context.error ? 
                 <Element name='contact'>
                     <div className='footer'>
                         <div className='social'>

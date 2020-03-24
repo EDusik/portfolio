@@ -10,7 +10,7 @@ import './styles.scss';
 function Projects() {
 
     const { context, dispatch } = useContext(Context);
-    const emojis = require('emojis')
+    const emojis = require('emojis');
     const [state, setState] = useState({
         repositories: [],
         showRepositories: []
@@ -26,6 +26,9 @@ function Projects() {
             setTimeout(() => {
                 dispatch({ name: 'isLoading', value: false });
             }, 1000);            
+        }).catch(() => {
+            dispatch({ name: 'isLoading', value: false });
+            dispatch({ name: 'error', value: true });
         });
     }, [dispatch]);
 
@@ -87,8 +90,10 @@ function Projects() {
                                     </div>
                                 );
                             })
-                            :
-                            <p className='no-repo'>{emojis.unicode('No repository found :sob:')}</p>
+                            :  
+                            !context.error ?                           
+                                <p className='no-repo'>{emojis.unicode('No repository found :sob:')}</p>
+                            : <></>
                         }
                     </div>
                 </Element> : 

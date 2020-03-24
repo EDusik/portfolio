@@ -7,23 +7,23 @@ import './styles.scss';
 
 function Search() {
 
-    const { dispatch, context } = useContext(Context);
+    const { context, dispatch } = useContext(Context);
     const onChange = (value) => {
         dispatch({ name: 'search', value: value });
     }
 
     return (    
         <React.Fragment>
-            {!context.isLoading ? 
+            {!context.isLoading && !context.error ?
                 <div className='search'>
                     <input type='text' 
                         name='search'   
                         onChange={(event)=> onChange(event.target.value)}
                         placeholder='Search...' 
                     />
-                </div> : 
-                <></> 
-            } 
+                </div> :
+                <></>
+            }
         </React.Fragment>
     )
 }

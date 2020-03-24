@@ -23,4 +23,22 @@ export default createGlobalStyle`
     * {
         box-sizing: border-box;
     }  
+
+    ::-webkit-scrollbar-track {
+        background-color: #F4F4F4;
+    }
+
+    ::-webkit-scrollbar {
+        width: 12px;
+        background: #FCFCFC;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #B2B2B2;
+        border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb:vertical:hover{
+        background: #999999;
+    }
 `;
