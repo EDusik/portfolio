@@ -38,16 +38,19 @@ function Projects() {
                 </div> 
                 <div className='profile-details'>
                     {!context.isLoading && !context.error ?
-                        <>      
+                        <> 
                             <img src={state.profile.avatar_url} alt={state.profile.login} />
                             <h1>{state.profile.name}</h1>
                             <h2>Developer</h2>
                             <p>{state.profile.bio}</p>
-                        </> :   
+                        </> : <></>
+                    } {
+                    !context.isLoading && context.error ? 
                         <React.Fragment> 
                             <h3> {emojis.unicode('error loading, please try again later :sob:')} </h3>
                         </React.Fragment>
-                    }                       
+                        : <></> 
+                    }                 
                 </div>
             </div>
         </Element>

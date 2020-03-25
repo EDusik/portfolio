@@ -23,7 +23,7 @@ function Footer() {
         getEmail().then(response => {
             setState(previousState => ({
                 ...previousState,
-                email: response.data[0].payload.commits[0].author.email,
+                email: "eduardodusik@gmail.com",
                 linkedin: 'https://www.linkedin.com/in/eduardo-dos-santos-dusik-095100120/'
             }));
         });
