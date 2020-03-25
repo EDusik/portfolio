@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import '../assets/sass/globals.scss';
+import '../assets/scss/globals.scss';
 
 export default createGlobalStyle`
     html, body {
