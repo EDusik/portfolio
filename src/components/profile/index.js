@@ -27,12 +27,8 @@ function Projects() {
     return (
         <Element name="about">
             <div className='profile'>
-                <div id="background-particles-js">
-                    {/* <Particles 
-                        width="100%"
-                        height="70vh"
-                        params={config}
-                    /> */}
+                <div className="background-particles-js">
+                    <div id="particles-js"></div>
                 </div> 
                 <div className='profile-details'>
                     {!context.isLoading && !context.error ?

@@ -8,12 +8,17 @@
     width: 100%;
     position: relative;
 
-    #background-particles-js {
+    .background-particles-js {
         width: 100%;
         height: 70vh;
         background-image: linear-gradient(180deg, $dark, transparent);    
         background-position: 50% 50%;    
         position: absolute; 
+    }
+
+    #particles-js {
+        width: 100%;
+        height: 70vh;
     }
 
     .profile-details {

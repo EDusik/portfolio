@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import React  from 'react';
+import React, { useEffect } from 'react';
 
 import { ContextProvider } from './context/reducer'
 import dark from './styles/themes/dark';
@@ -18,6 +18,13 @@ function App() {
   const toggleTheme = () => {
     setTheme(theme.name === 'light' ? dark : light);
   }
+
+  useEffect(() => {
+    const particlesJS = window.particlesJS;
+    particlesJS.load('particles-js', 'particles.json', function() {
+      console.log('Success!');
+    });
+  }, []);
 
   return (
     <React.Fragment>  
