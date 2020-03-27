@@ -1,12 +1,10 @@
 import { Element } from 'react-scroll'
-import Particles from 'react-particles-js';
 import React, { useEffect,  useState, useContext } from 'react';
-import ParticleField from 'react-particles-webgl';
 import { Context } from '../../context/reducer';
 import { getUser } from '../../services/github-service';
 
 import './styles.scss';
-import config from '../../assets/json/particles.json';
+// import config from '../../assets/json/particles.json';
 
 function Projects() {
 
@@ -35,7 +33,6 @@ function Projects() {
                         height="70vh"
                         params={config}
                     /> */}
-                    <ParticleField config={config} ></ParticleField>
                 </div> 
                 <div className='profile-details'>
                     {!context.isLoading && !context.error ?
