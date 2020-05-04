@@ -1,7 +1,3 @@
-# About
-:rocket: This is my portfolio, I hope you like it :)
-
-
 <div id="about"> 
 
 ## :page_facing_up: About
