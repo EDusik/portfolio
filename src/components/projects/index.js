@@ -55,9 +55,9 @@ function Projects() {
 
     const concatQuery = (value) => {
         value = value.toLowerCase();
-        const name = state.repositories.filter(x => x.name.toLowerCase().includes(value));
-        const language = state.repositories.filter(x => x.language.toLowerCase().includes(value));
-        const description = state.repositories.filter(x => x.description.toLowerCase().includes(value))
+        const name = state.repositories.filter(x => x.name ? x.name.toLowerCase().includes(value) : null);
+        const language = state.repositories.filter(x => x.language ? x.language.toLowerCase().includes(value) : null);
+        const description = state.repositories.filter(x => x.description ? x.description.toLowerCase().includes(value): null)
 
         let listOfRepos = name.concat(language);
         listOfRepos = listOfRepos.concat(description);
