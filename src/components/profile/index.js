@@ -33,7 +33,7 @@ function Projects() {
                 <div className='profile-details'>
                     {!context.isLoading && !context.error ?
                         <> 
-                            <img src={state.profile.avatar_url} alt={state.profile.login} />
+                            <img type="image" src={state.profile.avatar_url} alt={state.profile.login} />
                             <h1>{state.profile.name}</h1>
                             <h2>Developer</h2>
                             <p>{state.profile.bio}</p>

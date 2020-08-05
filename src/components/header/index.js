@@ -38,21 +38,21 @@ function Header({toggleTheme}) {
                             <li>
                                 <Link 
                                     activeClass={!bottom ? 'active ' : 'remove'}
-                                    to='about' spy={true} smooth={true} offset={-150} isDynamic={true} duration={1000} delay={50}>
+                                    to='about' spy={true} smooth={true} offset={-150} isDynamic={true} duration={1000} delay={50} alt="about">
                                         about
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     activeClass={!bottom ? 'active ' : 'remove'}
-                                    to='projects' spy={true} smooth={true} offset={-150} isDynamic={true} duration={1000} delay={50}>
+                                    to='projects' spy={true} smooth={true} offset={-150} isDynamic={true} duration={1000} delay={50} alt="projects">
                                         projects
                                 </Link>
                             </li>
                             <li>
                                 <Link
                                     className={bottom ? 'active' : ''}                                      
-                                    to='contact' spy={true} smooth={true} offset={0} duration={1000} isDynamic={true} delay={50} activeClass='active'>
+                                    to='contact' spy={true} smooth={true} offset={0} duration={1000} isDynamic={true} delay={50} activeClass='active' alt="contact">
                                         contact
                                 </Link>
                             </li>
@@ -65,7 +65,7 @@ function Header({toggleTheme}) {
                             checkedIcon={false} 
                             uncheckedIcon={false} 
                             height={14} 
-                            width={32} 
+                            width={32}
                             offColor="#999999" 
                             handleDiameter={20} 
                             onColor="#79B6F2"

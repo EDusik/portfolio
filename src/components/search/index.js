@@ -16,11 +16,14 @@ function Search() {
         <React.Fragment>
             {!context.isLoading && !context.error ?
                 <div className='search'>
-                    <input type='text' 
-                        name='search'   
+                    <input 
+                        type='text' 
+                        name='search'
+                        aria-label="search"
+                        id="search"
                         onChange={(event)=> onChange(event.target.value)}
                         placeholder='Search...' 
-                    />
+                    />                    
                 </div> :
                 <></>
             }

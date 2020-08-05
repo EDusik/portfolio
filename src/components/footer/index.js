@@ -35,7 +35,7 @@ function Footer() {
                 <Element name='contact'>
                     <div className='footer'>
                         <div className='social'>
-                            <a href={`mailto:${state.email}`} target='_top'>
+                            <a href={`mailto:${state.email}`} target='_top' >
                                 <i className='fas fa-envelope-square'></i>
                             </a>
                             <a href={state.profile.html_url} target='_blank' rel='noopener noreferrer'>
