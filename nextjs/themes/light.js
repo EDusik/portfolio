@@ -4,7 +4,7 @@ const light = {
 	sky: "#6272a4",
 	current_line: "#44475a",
 	foreground: "#282a36",
-	comment: "#6272a4",
+	comment: "#ffffff",
 	cyan: "#8be9fd",
 	green: "#50fa7b",
 	orange: "#ffb86c",
