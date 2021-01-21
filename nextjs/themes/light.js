@@ -1,7 +1,9 @@
 const light = {
-	background: "#282a36",
+	name: "light",
+	background: "#f8f8f2",
+	sky: "#6272a4",
 	current_line: "#44475a",
-	foreground: "#f8f8f2",
+	foreground: "#282a36",
 	comment: "#6272a4",
 	cyan: "#8be9fd",
 	green: "#50fa7b",
