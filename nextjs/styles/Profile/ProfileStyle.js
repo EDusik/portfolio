@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ProfileStyle = styled.div`
 
   @include font_secondary;
-  color: $light;
+  color: ${props => props.theme.sky};
   text-align: center;
   height: 70vh;
   width: 100%;
@@ -29,11 +29,11 @@ export const ProfileStyle = styled.div`
     position: absolute;  
 
     img {
-      border: solid 5px $text_primary;
+      border: solid 5px ${props => props.theme.sky};
       border-radius: 50%;
       width: 200px;
       height: 200px;
-      background-color: $light;
+      background-color: ${props => props.theme.white};
       margin-bottom: 15px;
     }    
 
@@ -44,6 +44,7 @@ export const ProfileStyle = styled.div`
       line-height: 25px;
       text-transform: uppercase;
       margin: 25px 0;
+      color: ${props => props.theme.text_primary};
       @include font_primary;
     }
 
@@ -75,6 +76,7 @@ export const ProfileStyle = styled.div`
       font-size: 18px;
       display: inline-flex;
       color: $text_secondary;
+      color: ${props => props.theme.sky};
       margin: 0px 15px;
     }
 

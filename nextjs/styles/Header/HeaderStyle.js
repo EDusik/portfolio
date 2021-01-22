@@ -28,7 +28,7 @@ export const HeaderStyle = styled.div`
     transition: 1s;
 
     .navbar {
-      color: $text_secondary;
+      color: ${props => props.theme.text_primary};
       width: 90%;
       padding-left: 10%;
       ul {      
@@ -70,12 +70,12 @@ export const HeaderStyle = styled.div`
             }
 
             &:hover {
-              color: $light;
+              color: ${props => props.theme.sky};
               cursor: pointer;
             }       
           }
           .active {
-            color: $light;
+            color: ${props => props.theme.danger};
           }
         }
       }   
@@ -94,8 +94,7 @@ export const HeaderStyle = styled.div`
   flex-wrap: wrap;
   position: fixed;
   height: 52px;
-  background-color: $primary;
-  border-bottom: solid 4px $secondary;
+  background-color: ${props => props.theme.navbar};
 
   .navbar {
     ul {

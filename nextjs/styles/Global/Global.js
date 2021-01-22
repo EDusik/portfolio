@@ -46,20 +46,20 @@ export default createGlobalStyle`
   }  
 
   ::-webkit-scrollbar-track {
-    background-color: #F4F4F4;
+    background-color: #f4f4f4;
   }
 
   ::-webkit-scrollbar {
     width: 12px;
-    background: #FCFCFC;
+    background: #fcfcfc;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #B2B2B2;
+    background: #ccc;
     border-radius: 6px;
   }
 
   ::-webkit-scrollbar-thumb:vertical:hover{
-    background: #999999;
+    background: #b2b2b2
   }
 `;

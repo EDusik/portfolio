@@ -12,32 +12,31 @@ export const FooterStyle = styled.div`
     margin-top: 15px;
 
     a {  
-      color: ${props => props.theme.foreground};
+      color: ${props => props.theme.text_primary};
       svg {
         font-size: 42px;
         margin: 0px 5px;          
       }
       :hover {
         cursor: pointer;
-        color: ${props => props.theme.comment};
+        color: ${props => props.theme.current_line};
         transition: .2s;
       }
     }
   }
 
   .copyright {
-    background-color: ${props => props.theme.current_line};
+    background-color: ${props => props.theme.navbar};
     color: ${props => props.theme.comment};
     width: 100%;
     text-align: center;
-    color: $text_primary;
+    color: ${props => props.theme.text_primary};
     height: 42px;
     line-height: 3;
     font-size: 14px;
-    @include font_primary; 
 
     strong {
-      color: ${props => props.theme.foreground};
+      color: ${props => props.theme.danger};
       font-weight: 500;
     }
   }

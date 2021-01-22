@@ -91,9 +91,9 @@ const Header = ({ toggleTheme }) => {
 							uncheckedIcon={false}
 							height={14}
 							width={32}
-							offColor="#999999"
+							offColor="#ccc"
 							handleDiameter={20}
-							onColor="#79B6F2"
+							onColor="#6272a4"
 						/>
 					</div>
 				</div>
