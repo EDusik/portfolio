@@ -1,19 +1,30 @@
 const dark = {
 	name: "dark",
 	background: "#282a36",
-	sky: "#232741",
-	current_line: "#44475a",
-	text_primary: "#f8f8f2",
-	text_secondary: "#bd93f9",
-	comment: "#ffffff",
+	background_repositories: "#44475a",
+	background_image: "#fff",
+	sky_color: "#232741",
+	loader_color: "#6272a4",
+	navbar_background_scrolled: "#44475a",
+	navbar_background: "transparent",
+	navbar_button: "#e0e0dc",
+	navbar_button_hover: "#fff",
+	navbar_button_active: "#ff5555",
+	primary_text: "#fff",
+	secondary_text: "#6272a4",
+	third_text: "#44475a",
+	anchor_text: "#bd93f9",
 	info: "#8be9fd",
+	yellow: "#f1fa8c",
 	success: "#50fa7b",
 	warning: "#ffb86c",
 	pink: "#ff79c6",
 	danger: "#ff5555",
-	yellow: "#f1fa8c",
-	white: "#fff",
-	navbar: "#44475a"
+	footer_background: "#44475a",
+	footer_background_social: "#282a36",
+	footer_text: "#e0e0dc",
+	footer_text_hover: "#fff",
+	footer_strong: "#ff5555"
 };
 
 export default dark;

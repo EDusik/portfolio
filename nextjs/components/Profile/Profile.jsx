@@ -1,6 +1,6 @@
 import { Element } from "react-scroll";
 import React, { useEffect, useState, useContext } from "react";
-import { Context } from "../../context/reducer/reducer";
+import { Context } from "../../context/reducer";
 import { getUser } from "../../services/gitHub.service";
 import { ProfileStyle } from "../../styles/Profile/ProfileStyle";
 

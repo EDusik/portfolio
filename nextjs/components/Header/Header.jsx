@@ -3,11 +3,10 @@ import React, { useEffect, useState, useContext } from "react";
 import Switch from "react-switch";
 import { HeaderStyle } from "../../styles/Header/HeaderStyle";
 import { ThemeContext } from "styled-components";
-import { Context } from "../../context/reducer/reducer";
 
 const Header = ({ toggleTheme }) => {
-	// const { name } = useContext(ThemeContext);
-	const { context } = useContext(Context);
+	const { name } = useContext(ThemeContext);
+
 	const [scroll, setScroll] = useState(false);
 	const [bottom, setBottom] = useState(false);
 	const navbarHeight = 56;
@@ -85,13 +84,15 @@ const Header = ({ toggleTheme }) => {
 					</nav>
 					<div className="switch">
 						<Switch
+							offHandleColor="#E0E0DC"
+							onHandleColor="#E0E0DC"
 							onChange={toggleTheme}
-							checked={context === "dark"}
+							checked={name === "dark"}
 							checkedIcon={false}
 							uncheckedIcon={false}
 							height={14}
 							width={32}
-							offColor="#ccc"
+							offColor="#ccccc"
 							handleDiameter={20}
 							onColor="#6272a4"
 						/>

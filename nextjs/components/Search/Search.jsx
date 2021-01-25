@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { Context } from "../../context/reducer/reducer";
+import { Context } from "../../context/reducer";
 import { SearchStyle } from "../../styles/Search/SearchStyle";
 
 function Search() {

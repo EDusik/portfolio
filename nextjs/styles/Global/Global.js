@@ -14,7 +14,7 @@ export default createGlobalStyle`
 
   body {
     background-color: ${props => props.theme.background};
-    color: ${props => props.theme.foreground};
+    color: ${props => props.theme.primary_text};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -36,10 +36,10 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
-  ::selection {
+  /* ::selection {
     background: $darkest;
     color: $light;    
-  }
+  } */
 
   * {
     box-sizing: border-box;

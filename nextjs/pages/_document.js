@@ -17,12 +17,11 @@ export default class MyDocument extends Document {
 						name="viewport"
 						content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
 					/>
-					<link rel="stylesheet" href="./css/all.css" />
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
-					<script type="text/javascript" src="/js/script.js"></script>
+					<script type="text/javascript" src="/assets/js/script.js"></script>
 				</body>
 			</Html>
 		);

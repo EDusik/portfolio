@@ -2,7 +2,7 @@ import { Element } from "react-scroll";
 import React, { useEffect, useState, useContext } from "react";
 
 import Loader from "../Loader/Loader";
-import { Context } from "../../context/reducer/reducer";
+import { Context } from "../../context/reducer";
 import { getRepositories } from "../../services/gitHub.service";
 
 import { ProjectStyle } from "../../styles/Projects/ProjectStyle";

@@ -12,12 +12,12 @@ export const SearchStyle = styled.div`
     height: 40px;
     margin: 2.5vh 15px;
     width: 100%;
-    border: solid ${props => props.theme.text_secondary} 2px;
+    border: solid ${props => props.theme.sky_color} 2px;
     border-radius: 0px;
     padding: 10px 8px;
     color: $primary;
     &:focus {
-      border-color: ${props => props.theme.text_secondary};
+      border-color: ${props => props.theme.secondary_text};
       outline: none;
       box-shadow: inset 0 1px 2px rgba(27, 31, 35, .075), 0 0 0 0.15em rgba(189, 147, 249, .9);
     }

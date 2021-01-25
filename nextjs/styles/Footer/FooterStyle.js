@@ -6,37 +6,37 @@ export const FooterStyle = styled.div`
   .social {
     height: 200px;
     width: 100%;
-    background-color: ${props => props.theme.background};
+    background-color: ${props => props.theme.footer_background_social};
     padding-top: 79px;
     text-align: center;
     margin-top: 15px;
 
     a {  
-      color: ${props => props.theme.text_primary};
+      color: ${props => props.theme.footer_text};
       svg {
         font-size: 42px;
         margin: 0px 5px;          
       }
       :hover {
         cursor: pointer;
-        color: ${props => props.theme.current_line};
+        color: ${props => props.theme.footer_text_hover};
         transition: .2s;
       }
     }
   }
 
   .copyright {
-    background-color: ${props => props.theme.navbar};
+    background-color: ${props => props.theme.footer_background};
     color: ${props => props.theme.comment};
     width: 100%;
     text-align: center;
-    color: ${props => props.theme.text_primary};
+    color: ${props => props.theme.footer_text};
     height: 42px;
     line-height: 3;
     font-size: 14px;
 
     strong {
-      color: ${props => props.theme.danger};
+      color: ${props => props.theme.footer_strong};
       font-weight: 500;
     }
   }

@@ -1,7 +1,7 @@
 import { Element } from "react-scroll";
 import React, { useEffect, useState, useContext } from "react";
 
-import { Context } from "../../context/reducer/reducer";
+import { Context } from "../../context/reducer";
 import { getEmail, getUser } from "../../services/gitHub.service";
 import { AiFillGithub, AiOutlineMail, AiFillLinkedin } from "react-icons/ai";
 import { FooterStyle } from "../../styles/Footer/FooterStyle";

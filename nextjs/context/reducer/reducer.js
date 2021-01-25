@@ -1,11 +1,12 @@
 import React, { createContext, useReducer } from "react";
 import light from "../../themes/light";
+import dark from "../../themes/dark";
 
 const initialContext = {
 	search: "",
 	isLoading: true,
 	error: false,
-	theme: light
+	theme: dark
 };
 
 const Context = createContext({});

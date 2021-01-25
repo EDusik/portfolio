@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const HeaderStyle = styled.div`
+ @import "assets/scss/globals.scss";
 
 .header {
   .transparent {
-    background-color: transparent;
+    background-color: ${props => props.theme.navbar_background};
   }
 
   border: 0;
@@ -28,7 +29,7 @@ export const HeaderStyle = styled.div`
     transition: 1s;
 
     .navbar {
-      color: ${props => props.theme.text_primary};
+      color: ${props => props.theme.navbar_button};
       width: 90%;
       padding-left: 10%;
       ul {      
@@ -55,7 +56,7 @@ export const HeaderStyle = styled.div`
           }
 
           a {
-            font-size: 0.75em;
+            font-size: .85em;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -70,12 +71,12 @@ export const HeaderStyle = styled.div`
             }
 
             &:hover {
-              color: ${props => props.theme.sky};
+              color: ${props => props.theme.navbar_button_hover};;
               cursor: pointer;
             }       
           }
           .active {
-            color: ${props => props.theme.danger};
+            color: ${props => props.theme.navbar_button_active};
           }
         }
       }   
@@ -94,7 +95,7 @@ export const HeaderStyle = styled.div`
   flex-wrap: wrap;
   position: fixed;
   height: 52px;
-  background-color: ${props => props.theme.navbar};
+  background-color: ${props => props.theme.navbar_background_scrolled};
 
   .navbar {
     ul {

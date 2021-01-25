@@ -10,13 +10,13 @@ export const ProjectStyle = styled.div`
   min-height: 22vh;
 
   i {
-    color: ${props => props.theme.sky};
+    color: ${props => props.theme.secondary_text};
     font-size: 14px;
   }
   
   a {
     font-size: 16px;      
-    color: ${props => props.theme.text_secondary};;
+    color: ${props => props.theme.anchor_text};
     display: inherit;
     line-height: 2.6;
     text-decoration: none;
@@ -26,9 +26,9 @@ export const ProjectStyle = styled.div`
   }
   
   .repository {
-    background-color: ${props => props.theme.comment};
+    background-color: ${props => props.theme.background_repositories};
     padding: 12px 18px;
-    color: ${props => props.theme.current_line};
+    color: ${props => props.theme.third_text};
     border-radius: 20px;
     line-height: .2;
     font-size: 15px;
@@ -40,7 +40,7 @@ export const ProjectStyle = styled.div`
   
   p {
     line-height: 1.2;
-    color: ${props => props.theme.text_primary};
+    color: ${props => props.theme.primary_text};
   }
 
   p.language {
@@ -49,6 +49,7 @@ export const ProjectStyle = styled.div`
     
   p.no-repo {
     text-align: center;
+    font-size: 1.2em;
     width: 100%;
     color: ${props => props.theme.danger};
   }
