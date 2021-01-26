@@ -27,10 +27,9 @@ export const FooterStyle = styled.div`
 
   .copyright {
     background-color: ${props => props.theme.footer_background};
-    color: ${props => props.theme.comment};
+    color: ${props => props.theme.footer_text};
     width: 100%;
     text-align: center;
-    color: ${props => props.theme.footer_text};
     height: 42px;
     line-height: 3;
     font-size: 14px;

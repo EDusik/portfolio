@@ -14,19 +14,10 @@ import light from "../themes/light";
 import dark from "../themes/dark";
 
 const App = () => {
-	// const [theme, setTheme] = usePersistedState("theme", light);
-	const [theme, setTheme] = useState("theme", light);
-
+	const [theme, setTheme] = usePersistedState("theme", light);
 	const toggleTheme = () => {
 		setTheme(theme.name === "light" ? dark : light);
 	};
-
-	// useEffect(() => {
-	// 	const particlesJS = window.particlesJS;
-	// 	particlesJS.load("particles-js", "/assets/json/particles.json", () => {
-	// 		console.log(theme.name);
-	// 	});
-	// }, [theme.name]);
 
 	useEffect(() => {
 		const particlesJS = window.particlesJS;
@@ -37,11 +28,12 @@ const App = () => {
 				console.log(theme.name);
 			}
 		);
-	}, [theme.name]);
+	}, [theme]);
 
 	return (
-		<ThemeProvider theme={theme.name !== undefined ? theme : light}>
-			{/* <ThemeProvider theme={dark}> */}
+		//  <ThemeProvider theme={theme !== undefined ? theme : dark}>
+		<ThemeProvider theme={light}>
+    {/*  <ThemeProvider theme={dark}> */}
 			<ContextProvider>
 				<GlobalStyle />
 				<Header toggleTheme={toggleTheme} />

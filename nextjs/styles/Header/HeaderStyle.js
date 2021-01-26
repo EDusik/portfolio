@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderStyle = styled.div`
- @import "assets/scss/globals.scss";
+@import "assets/scss/globals.scss";
 
 .header {
   .transparent {
@@ -71,7 +71,7 @@ export const HeaderStyle = styled.div`
             }
 
             &:hover {
-              color: ${props => props.theme.navbar_button_hover};;
+              color: ${props => props.theme.navbar_button_hover};
               cursor: pointer;
             }       
           }

@@ -92,7 +92,7 @@ const Header = ({ toggleTheme }) => {
 							uncheckedIcon={false}
 							height={14}
 							width={32}
-							offColor="#ccccc"
+							offColor="#CCCCCC"
 							handleDiameter={20}
 							onColor="#6272a4"
 						/>

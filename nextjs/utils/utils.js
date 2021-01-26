@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
-
-function usePersistedState(key, inititalState) {
+const usePersistedState = (key, inititalState) => {
 	const [state, setState] = useState(() => {
-		console.log(window.localStorate);
+		if (typeof localStorage !== "undefined") {
+			const storageValue = localStorage.getItem(key);
 
-		const storageValue = localStorage.getItem(key);
-
-		if (storageValue) {
-			return JSON.parse(storageValue);
-		} else {
-			return inititalState;
+			if (storageValue) {
+				return JSON.parse(storageValue);
+			} else {
+				return inititalState;
+			}
 		}
 	});
 
@@ -18,29 +17,6 @@ function usePersistedState(key, inititalState) {
 	}, [key, state]);
 
 	return [state, setState];
-}
+};
 
 export default usePersistedState;
-
-// import React from "react";
-
-// const useStickyState = (defaultValue, key) => {
-// 	debugger;
-// 	const [value, setValue] = React.useState(defaultValue);
-
-// 	React.useEffect(() => {
-// 		const stickyValue = window.localStorage.getItem(key);
-
-// 		if (stickyValue !== null) {
-// 			setValue(JSON.parse(stickyValue));
-// 		}
-// 	}, [key]);
-
-// 	React.useEffect(() => {
-// 		window.localStorage.setItem(key, JSON.stringify(value));
-// 	}, [key, value]);
-
-// 	return [value, setValue];
-// };
-
-// export default useStickyState;

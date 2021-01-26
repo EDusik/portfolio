@@ -7,7 +7,7 @@ export const LoaderStyle = styled.div`
     width: 300px;
     height: 300px;
     border-radius: 100%;
-    background: ${props => props.theme.loader_color};    
+    background: ${props => props.theme.loader_color};
     top: calc(50% - 150px);
     left: calc(50% - 150px);
     animation: loading 1.5s linear infinite;
