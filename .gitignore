@@ -12,8 +12,8 @@
 /build
 
 # next.js build output
-/.next
-/.nextjs
+# /.next
+# /.nextjs
 
 # misc
 .DS_Store
