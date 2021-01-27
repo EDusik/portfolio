@@ -92,7 +92,11 @@ export const HeaderStyle = styled.div`
 }
 
 .color {
-  @include transition;
+  -webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
