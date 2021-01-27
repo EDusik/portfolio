@@ -1,24 +1,23 @@
-<div id="about"> 
-
 ## :page_facing_up: About
-This is my portfolio, I hope you like it :)
-</div>
 
-<div id="tecnologies"> 
+This is my portfolio, I hope you like it :)
 
 ## :rocket: Technologies
-This project uses these technologies:
-- [React.Js](https://pt-br.reactjs.org/)
-</div>
 
-## :computer: Commands 
-<div id="commands"> 
+This project uses these technologies:
+
+- [React.Js](https://pt-br.reactjs.org/)
+- [Next.Js](https://nextjs.org/)
+- [Styled Components](https://styled-components.com/)
+
+## :computer: Commands
 
 ### :memo: Npm
+
 ```npm
 npm install
 ```
+
 ```npm
-npm start
+npm run dev
 ```
-</div>
