@@ -9,9 +9,14 @@ const Header = ({ toggleTheme }) => {
 
 	const [scroll, setScroll] = useState(false);
 	const [bottom, setBottom] = useState(false);
-	const navbarHeight = 56;
+  const navbarHeight = 56;
+  
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
 
-	useEffect(() => {
+	const handleScroll = () => {
 		document.addEventListener("scroll", () => {
 			const about = window.scrollY > navbarHeight;
 			if (about !== scroll) {
@@ -26,7 +31,7 @@ const Header = ({ toggleTheme }) => {
 				setBottom(false);
 			}
 		};
-	});
+  };
 
 	return (
 		<HeaderStyle>
