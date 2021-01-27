@@ -4,7 +4,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 export default class MyDocument extends Document {
 	render() {
 		return (
-			<Html>
+			<Html lang="pt-br">
 				<Head>
 					<meta charset="UTF-8" />
 					<meta name="language" content="PT" />
@@ -16,10 +16,7 @@ export default class MyDocument extends Document {
 					<link rel="stylesheet" href="/assets/scss/globals.scss" />
 
 					<meta name="theme-color" content="#6272a4" />
-					<meta
-						name="viewport"
-						content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-					/>
+					<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
 					<meta name="author" content="Eduardo Dusik" />
 					<meta name="title" content="Eduardo Dusik - Portfolio" />
 					<meta name="description" content="Eduardo Dusik - Front-End Developer" />

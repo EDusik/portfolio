@@ -5,6 +5,7 @@ import { HeaderStyle } from "../../styles/Header/HeaderStyle";
 
 import { ThemeContext } from "styled-components";
 import { Context } from "../../context/reducer";
+
 const Header = ({ toggleTheme }) => {
 
   const { context } = useContext(Context);
@@ -92,7 +93,12 @@ const Header = ({ toggleTheme }) => {
               </ul>
             </nav>
             <div className="switch">
-              <Switch
+              <Switch         
+                name="switch"            
+                id="switch"
+                aria-checked={name === "dark"}
+                aria-readonly="false"
+                aria-label="switch"     
                 offHandleColor="#E0E0DC"
                 onHandleColor="#E0E0DC"
                 onChange={toggleTheme}

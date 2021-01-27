@@ -66,11 +66,7 @@ export const HeaderStyle = styled.div`
             text-decoration: none;
             
             @media only screen and (max-width: 380px) {
-              font-size: 0.65em;
-            }
-
-            @media only screen and (max-width: 380px) {
-              font-size: 0.65em;
+              font-size: 0.80em;
             }
 
             &:hover {

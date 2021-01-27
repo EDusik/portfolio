@@ -35,13 +35,13 @@ const Footer = () => {
 					<div className="footer">
 						<div className="social">
 							<a href={`mailto:${state.email}`} target="_top">
-								<AiOutlineMail />
+								<AiOutlineMail title="Email" />
 							</a>
 							<a href={state.profile.html_url} target="_blank" rel="noopener noreferrer">
-								<AiFillGithub />
+								<AiFillGithub title="GitHub"  />
 							</a>
 							<a href={state.linkedin} target="_blank" rel="noopener noreferrer">
-								<AiFillLinkedin />
+								<AiFillLinkedin title="LinkedIn" />
 							</a>
 						</div>
 						<div className="copyright">

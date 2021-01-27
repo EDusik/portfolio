@@ -14,7 +14,8 @@ export const SearchStyle = styled.div`
     width: 100%;
     border: solid ${props => props.theme.secondary_text} 2px;
     border-radius: 0px;
-    padding: 10px 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
     color: ${props => props.theme.secondary_text};
     &:focus {
       border-color: rgba(189, 147, 249, .1);

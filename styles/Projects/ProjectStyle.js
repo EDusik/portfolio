@@ -50,6 +50,7 @@ export const ProjectStyle = styled.div`
   p.no-repo {
     text-align: center;
     font-size: 1.2em;
+    margin-top: 15px;
     width: 100%;
     color: ${props => props.theme.danger};
   }
