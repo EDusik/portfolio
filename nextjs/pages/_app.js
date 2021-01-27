@@ -1,4 +1,3 @@
-// import { ThemeProvider } from "styled-components";
 import React, { useEffect } from "react";
 import { ContextProvider } from "../context/reducer";
 import GlobalStyle from "../styles/Global/Global";

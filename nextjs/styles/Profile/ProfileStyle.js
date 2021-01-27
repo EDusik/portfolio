@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ProfileStyle = styled.div`
-  @import "assets/scss/globals.scss";
 
   @include font_secondary;
   color: ${props => props.theme.primary_text};

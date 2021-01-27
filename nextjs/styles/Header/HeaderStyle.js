@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const HeaderStyle = styled.div`
-@import "assets/scss/globals.scss";
 
 .header {
   .transparent {
@@ -13,14 +12,18 @@ export const HeaderStyle = styled.div`
   position: absolute;
   z-index: 1;
   width: 100%;
-  @include font_primary;
-  @include transition;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
 
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;    
+    align-items: center; 
     width: 1200px;
     max-width: 100%;
     padding: 0px 15px;
@@ -32,8 +35,8 @@ export const HeaderStyle = styled.div`
       color: ${props => props.theme.navbar_button};
       width: 90%;
       padding-left: 10%;
-      ul {      
-        padding-left: 0;         
+      ul {
+        padding-left: 0;     
         text-align: center;
         li {
           display: inline;
@@ -44,15 +47,15 @@ export const HeaderStyle = styled.div`
           }
 
           @media only screen and (max-width: 510px) {
-            padding: .5em 1em
+            padding: .5em 1em;
           }    
 
           @media only screen and (max-width: 420px) {
-            padding: .2em .7em
+            padding: .2em .7em;
           }
 
           @media only screen and (max-width: 340px) {
-            padding: .1em .5em
+            padding: .1em .5em;
           }
 
           a {
@@ -60,7 +63,7 @@ export const HeaderStyle = styled.div`
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            text-decoration: none; 
+            text-decoration: none;
             
             @media only screen and (max-width: 380px) {
               font-size: 0.65em;
@@ -73,13 +76,13 @@ export const HeaderStyle = styled.div`
             &:hover {
               color: ${props => props.theme.navbar_button_hover};
               cursor: pointer;
-            }       
+            }     
           }
           .active {
             color: ${props => props.theme.navbar_button_active};
           }
         }
-      }   
+      }
     }
   }
 
@@ -101,6 +104,6 @@ export const HeaderStyle = styled.div`
     ul {
       margin: 0em 0 .5em;
     }
-  } 
+  }
 }
 `;
