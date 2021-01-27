@@ -1,6 +1,6 @@
-import { ThemeProvider } from "styled-components";
-import React, { useEffect, useState } from "react";
-import { ContextProvider } from "../context/reducer/reducer";
+// import { ThemeProvider } from "styled-components";
+import React, { useEffect } from "react";
+import { ContextProvider } from "../context/reducer";
 import GlobalStyle from "../styles/Global/Global";
 
 import Footer from "../components/Footer/Footer";
@@ -8,41 +8,33 @@ import Header from "../components/Header/Header";
 import Profile from "../components/Profile/Profile";
 import Projects from "../components/Projects/Projects";
 import Search from "../components/Search/Search";
-import usePersistedState from "../utils/utils";
 
 import light from "../themes/light";
 import dark from "../themes/dark";
 
+import { ThemeProvider } from "styled-components";
+import { useDarkMode } from "../utils/useDarkMode";
+
 const App = () => {
-	const [theme, setTheme] = usePersistedState("theme", light);
-	const toggleTheme = () => {
-		setTheme(theme.name === "light" ? dark : light);
-	};
+	const [theme, toggleTheme] = useDarkMode();
+	const themeMode = theme === "light" ? light : dark;
 
 	useEffect(() => {
 		const particlesJS = window.particlesJS;
-		particlesJS.load(
-			"particles-js",
-			theme.name === "dark" ? "/assets/json/particles.json" : "/assets/json/snow.json",
-			() => {
-				console.log(theme.name);
-			}
-		);
+		particlesJS.load("particles-js", theme === "light" ? "/assets/json/snow.json" : "/assets/json/particles.json");
 	}, [theme]);
 
 	return (
-		//  <ThemeProvider theme={theme !== undefined ? theme : dark}>
-		<ThemeProvider theme={light}>
-    {/*  <ThemeProvider theme={dark}> */}
-			<ContextProvider>
+		<ContextProvider>
+			<ThemeProvider theme={themeMode}>
 				<GlobalStyle />
 				<Header toggleTheme={toggleTheme} />
 				<Profile />
 				<Search />
 				<Projects />
 				<Footer />
-			</ContextProvider>
-		</ThemeProvider>
+			</ThemeProvider>
+		</ContextProvider>
 	);
 };
 
