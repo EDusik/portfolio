@@ -1,11 +1,9 @@
-import { Element } from "react-scroll";
 import React, { useEffect, useState, useContext } from "react";
-
 import Loader from "../Loader/Loader";
 import { Context } from "../../context/reducer";
 import { getRepositories } from "../../services/gitHub.service";
-
 import { ProjectStyle } from "../../styles/Projects/ProjectStyle";
+import { Element } from "react-scroll";
 
 function Projects() {
 	const { context, dispatch } = useContext(Context);
@@ -51,7 +49,6 @@ function Projects() {
 				showRepositories: state.repositories
 			}));
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [context.search]);
 
 	const concatQuery = value => {
@@ -89,9 +86,9 @@ function Projects() {
 										<a href={repo.html_url} target="_blank" rel="noopener noreferrer">
 											{repo.name}
 										</a>
-										<i>{repo.full_name}</i>
-										<p>{emojis.unicode(repo.description)}</p>
-										<p className="language">{repo.language}</p>
+										<i>{repo.full_name ? repo.full_name : ""}</i>
+										<p>{emojis.unicode(repo.description ? repo.description : "")}</p>
+										<p className="language">{repo.language ? repo.language : ""}</p>
 									</div>
 								);
 							})
