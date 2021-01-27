@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ProfileStyle = styled.div`
 
-  @include font_secondary;
+  font-family: "Open Sans", "Roboto", "sans-serif";
   color: ${props => props.theme.primary_text};
   text-align: center;
   height: 70vh;
@@ -45,7 +45,7 @@ export const ProfileStyle = styled.div`
       text-transform: uppercase;
       margin: 25px 0;
       color: ${props => props.theme.primary_text};
-      @include font_primary;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     h2 {
@@ -57,7 +57,7 @@ export const ProfileStyle = styled.div`
       text-decoration: none;
       display: block;        
       margin: 25px 0; 
-      @include font_primary;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     p {
