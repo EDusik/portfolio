@@ -6,7 +6,7 @@ import { getEmail, getUser } from "../../services/gitHub.service";
 import { AiFillGithub, AiOutlineMail, AiFillLinkedin } from "react-icons/ai";
 import { FooterStyle } from "../../styles/Footer/FooterStyle";
 
-function Footer() {
+const Footer = () => {
 	const { context } = useContext(Context);
 	const [state, setState] = useState({
 		profile: {},

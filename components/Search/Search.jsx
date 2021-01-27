@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { Context } from "../../context/reducer";
 import { SearchStyle } from "../../styles/Search/SearchStyle";
 
-function Search() {
+const Search = () => {
 	const { context, dispatch } = useContext(Context);
 	const onChange = value => {
 		dispatch({ name: "search", value: value });

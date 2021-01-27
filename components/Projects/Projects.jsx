@@ -5,7 +5,7 @@ import { getRepositories } from "../../services/gitHub.service";
 import { ProjectStyle } from "../../styles/Projects/ProjectStyle";
 import { Element } from "react-scroll";
 
-function Projects() {
+const Projects = () => {
 	const { context, dispatch } = useContext(Context);
 	const emojis = require("emojis");
 	const [state, setState] = useState({
@@ -76,7 +76,7 @@ function Projects() {
 
 	return (
 		<ProjectStyle>
-			{!context.isLoading ? (
+			{!context.isLoading && !context.error ? (
 				<Element name="projects">
 					<div className="repositories">
 						{state.repositories && state.showRepositories.length > 0 ? (

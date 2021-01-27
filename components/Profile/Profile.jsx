@@ -4,7 +4,7 @@ import { getUser } from "../../services/gitHub.service";
 import { ProfileStyle } from "../../styles/Profile/ProfileStyle";
 import { Element } from "react-scroll";
 
-function Projects() {
+const Projects = () => {
 	const { context, dispatch } = useContext(Context);
 	const emojis = require("emojis");
 	const [state, setState] = useState({
