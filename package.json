@@ -1,16 +1,22 @@
 {
-	"name": "nextjs",
+	"name": "portfolio",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Eduardo Dusik - Portfolio Web",
 	"main": "index.js",
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"start": "next start -p $PORT",
-		"heroku-postbuild": "npm run build"
+		"start": "next start -p $PORT"
 	},
-	"keywords": [],
-	"author": "",
+	"keywords": [
+    "Eduardo",
+    "Dusik",
+    "Desenvolvedor",
+    "Front-end",
+    "Portfolio",
+    "Dev"
+  ],
+	"author": "Eduardo Dusik",
 	"license": "ISC",
 	"dependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
