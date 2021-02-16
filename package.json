@@ -6,7 +6,9 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
-		"start": "next start -p $PORT"
+		"start": "next start -p $PORT",
+    "deploy": "next build && netlify deploy --prod",
+    "export": "npm run build && next export"
 	},
 	"keywords": [
     "Eduardo",
