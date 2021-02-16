@@ -4,11 +4,10 @@
 	"description": "Eduardo Dusik - Portfolio Web",
 	"main": "index.js",
 	"scripts": {
-		"dev": "next",
-		"build": "next build",
-		"start": "next start -p $PORT",
-    "deploy": "next build && netlify deploy --prod",
-    "export": "npm run build && next export"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
 	},
 	"keywords": [
     "Eduardo",
