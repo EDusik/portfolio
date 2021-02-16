@@ -4,19 +4,19 @@
 	"description": "Eduardo Dusik - Portfolio Web",
 	"main": "index.js",
 	"scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"export": "next export"
 	},
 	"keywords": [
-    "Eduardo",
-    "Dusik",
-    "Desenvolvedor",
-    "Front-end",
-    "Portfolio",
-    "Dev"
-  ],
+		"Eduardo",
+		"Dusik",
+		"Desenvolvedor",
+		"Front-end",
+		"Portfolio",
+		"Dev"
+	],
 	"author": "Eduardo Dusik",
 	"license": "ISC",
 	"dependencies": {
