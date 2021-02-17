@@ -35,7 +35,8 @@ const Projects = () => {
 						<>
 							<img type="image" src={state.profile.avatar_url} alt={state.profile.login} />
 							<h1>{state.profile.name}</h1>
-							<h2>Desenvolvedor</h2><h2> Front-end</h2>
+							<h2>Desenvolvedor</h2>
+              <h2>Front-end</h2>
 							<p>{emojis.unicode(state.bio)}</p>
 						</>
 					) : (

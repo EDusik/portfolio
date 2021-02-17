@@ -5,6 +5,8 @@ import { getRepositories } from "../../services/gitHub.service";
 import { ProjectStyle } from "../../styles/Projects/ProjectStyle";
 import { Element } from "react-scroll";
 
+const REQUEST_LIMIT = 100;
+
 const Projects = () => {
 	const { context, dispatch } = useContext(Context);
 	const emojis = require("emojis");
@@ -12,9 +14,9 @@ const Projects = () => {
 		repositories: [],
 		showRepositories: []
 	});
-
+ 
 	useEffect(() => {
-		getRepositories()
+		getRepositories(REQUEST_LIMIT)
 			.then(response => {
 				setState(previousState => ({
 					...previousState,
@@ -53,10 +55,10 @@ const Projects = () => {
 
 	const concatQuery = value => {
 		value = value.toLowerCase();
-		const name = state.repositories.filter(x => (x.name ? x.name.toLowerCase().includes(value) : null));
-		const language = state.repositories.filter(x => (x.language ? x.language.toLowerCase().includes(value) : null));
-		const description = state.repositories.filter(x =>
-			x.description ? x.description.toLowerCase().includes(value) : null
+		const name = state.repositories.filter(repoName => (repoName.name ? repoName.name.toLowerCase().includes(value) : null));
+		const language = state.repositories.filter(repoLanguage => (repoLanguage.language ? repoLanguage.language.toLowerCase().includes(value) : null));
+		const description = state.repositories.filter(repoDescription =>
+			repoDescription.description ? repoDescription.description.toLowerCase().includes(value) : null
 		);
 
 		let listOfRepos = name.concat(language);
