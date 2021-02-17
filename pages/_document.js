@@ -18,12 +18,12 @@ export default class MyDocument extends Document {
 					<meta name="theme-color" content="#6272a4" />
 					<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
 					<meta name="author" content="Eduardo Dusik" />
-					<meta name="title" content="Eduardo Dusik - Portfolio" />
+					<meta name="title" content="Eduardo Dusik - Portfólio" />
 					<meta name="description" content="Eduardo Dusik - Desenvolvedor Front-End" />
-					<meta name="keywords" content="eduardo, dusik, desenvolvedor, front-end, portfolio, dev" />
+					<meta name="keywords" content="eduardo, dusik, desenvolvedor, front-end, portfólio, dev" />
 
 					<meta property="og:type" content="website" />
-					<meta property="og:title" content="Eduardo Dusik - Portfolio" />
+					<meta property="og:title" content="Eduardo Dusik - Portfólio" />
 					<meta property="og:description" content="Eduardo Dusik - Desenvolvedor Front-End" />
 					<meta property="og:image" content="/static/logo192.png" />
 					<meta property="og:site_name" content="Eduardo Dusik - Desenvolvedor Front-End" />
