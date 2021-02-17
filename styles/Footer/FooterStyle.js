@@ -15,8 +15,19 @@ export const FooterStyle = styled.div`
       color: ${props => props.theme.footer_text};
       svg {
         font-size: 42px;
-        margin: 0px 5px;          
+        margin: 0px 5px;
       }
+
+      .blogger {
+        font-size: 34px;
+        margin: 0 5px 4px 5px;
+      }
+
+      .github {        
+        font-size: 39px;
+        margin: 0px 5px 2px 5px;
+      }
+
       :hover {
         cursor: pointer;
         color: ${props => props.theme.footer_text_hover};

@@ -3,7 +3,11 @@ import React, { useEffect, useState, useContext } from "react";
 
 import { Context } from "../../context/reducer";
 import { getEmail, getUser } from "../../services/gitHub.service";
-import { AiFillGithub, AiOutlineMail, AiFillLinkedin } from "react-icons/ai";
+import { AiFillLinkedin as Linkedin} from "react-icons/ai";
+import { ImBlogger2 as Blogger } from "react-icons/im";
+import { FaGithubSquare as GitHub} from "react-icons/fa";
+
+
 import { FooterStyle } from "../../styles/Footer/FooterStyle";
 
 const Footer = () => {
@@ -11,7 +15,8 @@ const Footer = () => {
 	const [state, setState] = useState({
 		profile: {},
 		email: "",
-		linkedin: ""
+		linkedin: "",
+    blogger: ""
 	});
 
 	useEffect(() => {
@@ -23,7 +28,8 @@ const Footer = () => {
 			setState(previousState => ({
 				...previousState,
 				email: "eduardodusik@gmail.com",
-				linkedin: "https://www.linkedin.com/in/eduardo-dos-santos-dusik-095100120/"
+				linkedin: "https://www.linkedin.com/in/eduardo-dos-santos-dusik-095100120/",
+        blogger: "https://www.eduardodusik.dev"
 			}));
 		});
 	}, []);
@@ -34,18 +40,18 @@ const Footer = () => {
 				<Element name="contact">
 					<div className="footer">
 						<div className="social">
-							<a href={`mailto:${state.email}`} target="_top">
-								<AiOutlineMail title="Email" />
-							</a>
 							<a href={state.profile.html_url} target="_blank" rel="noopener noreferrer">
-								<AiFillGithub title="GitHub"  />
+								<GitHub title="GitHub" className="github" />
 							</a>
 							<a href={state.linkedin} target="_blank" rel="noopener noreferrer">
-								<AiFillLinkedin title="LinkedIn" />
+								<Linkedin title="LinkedIn" />
+							</a>
+              <a href={state.blogger} target="_blank" rel="noopener noreferrer">
+								<Blogger title="Blog" className="blogger" />
 							</a>
 						</div>
 						<div className="copyright">
-							Developed by <strong>{state.profile.name}</strong>
+							Desenvolvido por <strong>{state.profile.name}</strong>
 						</div>
 					</div>
 				</Element>

@@ -12,7 +12,7 @@ const dark = {
 	navbar_button_active: "#ff5555",
 	primary_text: "#fff",
 	secondary_text: "#6272a4",
-	third_text: "#44475a",
+	third_text: "#7C7E8B",
 	anchor_text: "#bd93f9",
 	info: "#8be9fd",
 	yellow: "#f1fa8c",

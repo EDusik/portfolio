@@ -38,35 +38,35 @@ export const ProfileStyle = styled.div`
     }    
 
     h1 {
-      font-size: 24px;
+      font-size: 2rem;      
       font-weight: 400;
       letter-spacing: 5px;
-      line-height: 25px;
+      line-height: 1.5rem;
       text-transform: uppercase;
-      margin: 25px 0;
+      margin: 1.2rem 0 3rem 0;
       color: ${props => props.theme.primary_text};
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     h2 {
       color: ${props => props.theme.secondary_text};
-      font-size: 68px;
+      font-size: 2.4rem;
       font-weight: 700;
-      line-height: 90px;
+      line-height: 1.6rem;
       text-transform: capitalize;
       text-decoration: none;
       display: block;        
-      margin: 25px 0; 
+      margin: 1.2rem 0; 
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     p {
       text-align: center;
       max-width: 30%;
-      font-size: 18px;
+      font-size: 1.1rem;
       display: inline-flex;
       color: ${props => props.theme.third_text};
-      margin: 0px 15px;
+      margin: 1.5rem 0.625rem 2rem 0.625rem;
     }
 
     @media only screen and (max-width: 1820px) {
@@ -100,11 +100,12 @@ export const ProfileStyle = styled.div`
       }
 
       h1 {
-        font-size: 20px;
+        font-size: 1.5rem;
       }
 
       h2 {
-        font-size: 16vw;
+        font-size: 1.2rem;
+        line-height: .8rem;
       }
     }
 

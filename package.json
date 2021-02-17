@@ -1,7 +1,7 @@
 {
 	"name": "portfolio",
-	"version": "1.0.0",
-	"description": "Eduardo Dusik - Portfolio Web",
+	"version": "1.0.1",
+	"description": "Eduardo Dusik - Desenvolvedor Web Front-end",
 	"main": "index.js",
 	"scripts": {
 		"dev": "next",
@@ -14,7 +14,7 @@
 		"Dusik",
 		"Desenvolvedor",
 		"Front-end",
-		"Portfolio",
+		"Portfólio",
 		"Dev"
 	],
 	"author": "Eduardo Dusik",

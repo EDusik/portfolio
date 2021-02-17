@@ -54,9 +54,9 @@ const Header = ({ toggleTheme }) => {
                     isDynamic={true}
                     duration={1000}
                     delay={50}
-                    alt="about"
+                    alt="sobre"
                   >
-                    about
+                    sobre
                   </Link>
                 </li>
                 <li>
@@ -69,9 +69,9 @@ const Header = ({ toggleTheme }) => {
                     isDynamic={true}
                     duration={1000}
                     delay={50}
-                    alt="projects"
+                    alt="projetos"
                   >
-                    projects
+                    projetos
                   </Link>
                 </li>
                 <li>
@@ -85,9 +85,9 @@ const Header = ({ toggleTheme }) => {
                     isDynamic={true}
                     delay={50}
                     activeClass="active"
-                    alt="contact"
+                    alt="contato"
                   >
-                    contact
+                    contato
                   </Link>
                 </li>
               </ul>

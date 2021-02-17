@@ -59,7 +59,7 @@ export const HeaderStyle = styled.div`
           }
 
           a {
-            font-size: .85em;
+            font-size: .95em;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 0.1em;
