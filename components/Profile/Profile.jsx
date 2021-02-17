@@ -4,17 +4,20 @@ import { getUser } from "../../services/gitHub.service";
 import { ProfileStyle } from "../../styles/Profile/ProfileStyle";
 import { Element } from "react-scroll";
 
+const TEXT_BIO = "Desenvolvedor web front-end apaixonado pelo que faz. Curte escutar power metal e não consegue ficar um dia sem beber :coffee:."
+
 const Projects = () => {
 	const { context, dispatch } = useContext(Context);
 	const emojis = require("emojis");
 	const [state, setState] = useState({
-		profile: {}
+		profile: {},
+    bio: "",
 	});
 
 	useEffect(() => {
 		getUser()
 			.then(response => {
-				setState({ profile: response.data });
+				setState({ profile: response.data, bio: TEXT_BIO });
 			})
 			.catch(() => {
 				dispatch({ name: "error", value: true });
@@ -32,8 +35,8 @@ const Projects = () => {
 						<>
 							<img type="image" src={state.profile.avatar_url} alt={state.profile.login} />
 							<h1>{state.profile.name}</h1>
-							<h2>Developer</h2>
-							<p>{state.profile.bio}</p>
+							<h2>Desenvolvedor</h2><h2> Front-end</h2>
+							<p>{emojis.unicode(state.bio)}</p>
 						</>
 					) : (
 						<></>

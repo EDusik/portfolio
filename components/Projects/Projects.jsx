@@ -93,7 +93,7 @@ const Projects = () => {
 								);
 							})
 						) : !context.error ? (
-							<p className="no-repo">{emojis.unicode("No repository found :sob:")}</p>
+							<p className="no-repo">{emojis.unicode("Nenhum repositório encontrado :sob:")}</p>
 						) : (
 							<></>
 						)}

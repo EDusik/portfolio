@@ -19,7 +19,7 @@ const Search = () => {
 						aria-label="search"
 						id="search"
 						onChange={event => onChange(event.target.value)}
-						placeholder="Search..."
+						placeholder="Pesquisar..."
 					/>
 				</div>
 			) : (
