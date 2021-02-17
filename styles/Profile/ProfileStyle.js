@@ -53,7 +53,6 @@ export const ProfileStyle = styled.div`
       font-size: 2.4rem;
       font-weight: 700;
       line-height: 1.6rem;
-      text-transform: capitalize;
       text-decoration: none;
       display: block;        
       margin: 1.2rem 0; 
