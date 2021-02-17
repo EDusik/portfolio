@@ -17,6 +17,12 @@ export const FooterStyle = styled.div`
         font-size: 42px;
         margin: 0px 5px;          
       }
+
+      .blogger {
+        font-size: 34px;
+        margin: 0 5px 4px 5px;
+      }
+
       :hover {
         cursor: pointer;
         color: ${props => props.theme.footer_text_hover};
