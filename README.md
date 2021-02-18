@@ -1,4 +1,4 @@
-## :page_facing_up: About
+## :zap: About
 
 This is my portfolio, I hope you like it :wink:
 
