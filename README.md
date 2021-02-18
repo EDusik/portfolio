@@ -14,7 +14,6 @@ This project uses these technologies:
 
 ## :computer: Commands
 
-### :memo: Npm
 ### Install Dependencies
 ```npm
 npm install
