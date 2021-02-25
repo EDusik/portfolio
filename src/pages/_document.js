@@ -6,17 +6,15 @@ export default class MyDocument extends Document {
 		return (
 			<Html lang="pt-br">
 				<Head>
-					<meta charset="UTF-8" />
+					<meta charSet="UTF-8" />
 					<meta name="language" content="PT" />
 
-					<title>Eduardo Dusik - Desenvolvedor Front-End</title>
 					<link rel="shortcut icon" href="/static/favicon.ico" />
 					<link rel="manifest" href="/static/manifest.json" />
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" />
 					<link rel="stylesheet" href="/assets/scss/globals.scss" />
 
 					<meta name="theme-color" content="#6272a4" />
-					<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
 					<meta name="author" content="Eduardo Dusik" />
 					<meta name="title" content="Eduardo Dusik - Portfólio" />
 					<meta name="description" content="Eduardo Dusik - Desenvolvedor Front-End" />

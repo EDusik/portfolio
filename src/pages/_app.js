@@ -8,6 +8,8 @@ import Profile from "../components/Profile/Profile";
 import Projects from "../components/Projects/Projects";
 import Search from "../components/Search/Search";
 
+import Head from "next/head";
+
 import light from "../themes/light";
 import dark from "../themes/dark";
 
@@ -26,6 +28,9 @@ const App = () => {
 	return (
 		<ContextProvider>
 			<ThemeProvider theme={themeMode}>
+				<Head>
+					<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
+				</Head>
 				<GlobalStyle />
 				<Header toggleTheme={toggleTheme} />
 				<Profile />
