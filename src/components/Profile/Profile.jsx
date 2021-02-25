@@ -34,8 +34,8 @@ const Projects = () => {
 				<div className="profile-details">
 					{!context.isLoading && !context.error && (
 						<>
-							<img type="image" src={state.profile.avatar_url} alt={state.profile.login} />
-							<h1>{state.profile.name}</h1>
+							<img type="image" src={state.profile.avatar_url} alt="Eduardo Dusik" />
+							<h1>Eduardo Dusik</h1>
 							<h2>Desenvolvedor</h2>
 							<h2>Front-end</h2>
 							<p>{emojis.unicode(state.bio)}</p>
@@ -43,7 +43,7 @@ const Projects = () => {
 					)}
 					{!context.isLoading && context.error && (
 						<React.Fragment>
-							<h3> {emojis.unicode("error loading, please try again later :sob:")} </h3>
+							<h3>{emojis.unicode("error loading, please try again later :sob:")}</h3>
 						</React.Fragment>
 					)}
 				</div>
