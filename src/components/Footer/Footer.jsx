@@ -3,10 +3,9 @@ import React, { useEffect, useState, useContext } from "react";
 
 import { Context } from "../../context/reducer";
 import { getEmail, getUser } from "../../services/gitHub.service";
-import { AiFillLinkedin as Linkedin} from "react-icons/ai";
+import { AiFillLinkedin as Linkedin } from "react-icons/ai";
 import { ImBlogger2 as Blogger } from "react-icons/im";
-import { FaGithubSquare as GitHub} from "react-icons/fa";
-
+import { FaGithubSquare as GitHub } from "react-icons/fa";
 
 import { FooterStyle } from "../../styles/Footer/FooterStyle";
 
@@ -16,7 +15,7 @@ const Footer = () => {
 		profile: {},
 		email: "",
 		linkedin: "",
-    blogger: ""
+		blogger: ""
 	});
 
 	useEffect(() => {
@@ -29,7 +28,7 @@ const Footer = () => {
 				...previousState,
 				email: "eduardodusik@gmail.com",
 				linkedin: "https://www.linkedin.com/in/eduardo-dos-santos-dusik-095100120/",
-        blogger: "https://www.eduardodusik.dev"
+				blogger: "https://www.eduardodusik.dev"
 			}));
 		});
 	}, []);
@@ -46,7 +45,7 @@ const Footer = () => {
 							<a href={state.linkedin} target="_blank" rel="noopener noreferrer">
 								<Linkedin title="LinkedIn" />
 							</a>
-              <a href={state.blogger} target="_blank" rel="noopener noreferrer">
+							<a href={state.blogger} target="_blank" rel="noopener noreferrer">
 								<Blogger title="Blog" className="blogger" />
 							</a>
 						</div>
@@ -58,6 +57,6 @@ const Footer = () => {
 			)}
 		</FooterStyle>
 	);
-}
+};
 
 export default Footer;

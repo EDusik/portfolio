@@ -13,18 +13,11 @@ const Search = () => {
 		<SearchStyle>
 			{!context.isLoading && !context.error && (
 				<div className="search">
-					<input
-						type="text"
-						name="search"
-						aria-label="search"
-						id="search"
-						onChange={event => onChange(event.target.value)}
-						placeholder="Pesquisar..."
-					/>
+					<input type="text" name="search" aria-label="search" id="search" onChange={event => onChange(event.target.value)} placeholder="Pesquisar..." />
 				</div>
 			)}
 		</SearchStyle>
 	);
-}
+};
 
 export default Search;

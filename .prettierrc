@@ -1,5 +1,5 @@
 {
-	"printWidth": 120,
+	"printWidth": 240,
 	"useTabs": true,
 	"semi": true,
 	"singleQuote": false,
@@ -14,6 +14,6 @@
 	"proseWrap": "preserve",
 	"htmlWhitespaceSensitivity": "strict",
 	"endOfLine": "auto",
-	"embeddedLanguageFormatting": "off",
+	"embeddedLanguageFormatting": "auto",
 	"tabWidth": 2
 }

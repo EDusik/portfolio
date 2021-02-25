@@ -14,7 +14,7 @@ const Projects = () => {
 		repositories: [],
 		showRepositories: []
 	});
- 
+
 	useEffect(() => {
 		getRepositories(REQUEST_LIMIT)
 			.then(response => {
@@ -23,8 +23,7 @@ const Projects = () => {
 					repositories: response.data,
 					showRepositories: response.data
 				}));
-				setTimeout(() => {
-				}, 1000);
+				setTimeout(() => {}, 1000);
 			})
 			.catch(() => {
 				dispatch({ name: "error", value: true });
@@ -55,9 +54,7 @@ const Projects = () => {
 		value = value.toLowerCase();
 		const name = state.repositories.filter(repoName => (repoName.name ? repoName.name.toLowerCase().includes(value) : null));
 		const language = state.repositories.filter(repoLanguage => (repoLanguage.language ? repoLanguage.language.toLowerCase().includes(value) : null));
-		const description = state.repositories.filter(repoDescription =>
-			repoDescription.description ? repoDescription.description.toLowerCase().includes(value) : null
-		);
+		const description = state.repositories.filter(repoDescription => (repoDescription.description ? repoDescription.description.toLowerCase().includes(value) : null));
 
 		let listOfRepos = name.concat(language);
 		listOfRepos = listOfRepos.concat(description);
@@ -79,22 +76,20 @@ const Projects = () => {
 			{!context.isLoading && !context.error ? (
 				<Element name="projects">
 					<div className="repositories">
-						{state.repositories && state.showRepositories.length > 0 ? (
-							state.showRepositories.map(repo => {
-								return (
-									<div className="repository" key={repo.id}>
-										<a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-											{repo.name}
-										</a>
-										<i>{repo.full_name ? repo.full_name : ""}</i>
-										<p>{emojis.unicode(repo.description ? repo.description : "")}</p>
-										<p className="language">{repo.language ? repo.language : ""}</p>
-									</div>
-								);
-							})
-						) : !context.error && (
-							<p className="no-repo">{emojis.unicode("Nenhum repositório encontrado :sob:")}</p>
-						)}
+						{state.repositories && state.showRepositories.length > 0
+							? state.showRepositories.map(repo => {
+									return (
+										<div className="repository" key={repo.id}>
+											<a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+												{repo.name}
+											</a>
+											<i>{repo.full_name ? repo.full_name : ""}</i>
+											<p>{emojis.unicode(repo.description ? repo.description : "")}</p>
+											<p className="language">{repo.language ? repo.language : ""}</p>
+										</div>
+									);
+							  })
+							: !context.error && !context.isLoading && <p className="no-repo">{emojis.unicode("Nenhum repositório encontrado :sob:")}</p>}
 					</div>
 				</Element>
 			) : (
@@ -102,6 +97,6 @@ const Projects = () => {
 			)}
 		</ProjectStyle>
 	);
-}
+};
 
 export default Projects;
