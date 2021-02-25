@@ -24,11 +24,9 @@ const Projects = () => {
 					showRepositories: response.data
 				}));
 				setTimeout(() => {
-					dispatch({ name: "isLoading", value: false });
 				}, 1000);
 			})
 			.catch(() => {
-				dispatch({ name: "isLoading", value: false });
 				dispatch({ name: "error", value: true });
 			});
 	}, [dispatch]);
@@ -94,10 +92,8 @@ const Projects = () => {
 									</div>
 								);
 							})
-						) : !context.error ? (
+						) : !context.error && (
 							<p className="no-repo">{emojis.unicode("Nenhum repositório encontrado :sob:")}</p>
-						) : (
-							<></>
 						)}
 					</div>
 				</Element>

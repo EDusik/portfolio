@@ -11,7 +11,7 @@ const Search = () => {
 
 	return (
 		<SearchStyle>
-			{!context.isLoading && !context.error ? (
+			{!context.isLoading && !context.error && (
 				<div className="search">
 					<input
 						type="text"
@@ -22,8 +22,6 @@ const Search = () => {
 						placeholder="Pesquisar..."
 					/>
 				</div>
-			) : (
-				<></>
 			)}
 		</SearchStyle>
 	);

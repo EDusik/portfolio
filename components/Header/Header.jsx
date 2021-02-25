@@ -39,7 +39,7 @@ const Header = ({ toggleTheme }) => {
 
 	return (
 		<HeaderStyle>
-      {!context.isLoading && !context.error ? (
+      {!context.isLoading && !context.error && (
         <header className={"header " + (scroll ? "color" : "transparent")}>
           <div className="container">
             <nav className="navbar">
@@ -114,8 +114,6 @@ const Header = ({ toggleTheme }) => {
             </div>
           </div>
         </header>
-      ) : (
-        <></>
       )}
 		</HeaderStyle>
 	);

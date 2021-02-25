@@ -31,7 +31,7 @@ const Projects = () => {
 					<div id="particles-js"></div>
 				</div>
 				<div className="profile-details">
-					{!context.isLoading && !context.error ? (
+					{!context.isLoading && !context.error && (
 						<>
 							<img type="image" src={state.profile.avatar_url} alt={state.profile.login} />
 							<h1>{state.profile.name}</h1>
@@ -39,15 +39,11 @@ const Projects = () => {
               <h2>Front-end</h2>
 							<p>{emojis.unicode(state.bio)}</p>
 						</>
-					) : (
-						<></>
-					)}{" "}
-					{!context.isLoading && context.error ? (
+					)}
+					{!context.isLoading && context.error && (
 						<React.Fragment>
 							<h3> {emojis.unicode("error loading, please try again later :sob:")} </h3>
 						</React.Fragment>
-					) : (
-						<></>
 					)}
 				</div>
 			</ProfileStyle>

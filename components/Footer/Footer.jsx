@@ -36,7 +36,7 @@ const Footer = () => {
 
 	return (
 		<FooterStyle>
-			{!context.isLoading && !context.error ? (
+			{!context.isLoading && !context.error && (
 				<Element name="contact">
 					<div className="footer">
 						<div className="social">
@@ -55,8 +55,6 @@ const Footer = () => {
 						</div>
 					</div>
 				</Element>
-			) : (
-				<></>
 			)}
 		</FooterStyle>
 	);
