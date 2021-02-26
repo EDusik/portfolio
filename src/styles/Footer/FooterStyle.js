@@ -18,7 +18,7 @@ export const FooterStyle = styled.div`
 				}
 
 				.blogger {
-					font-size: 34px;
+					font-size: 33px;
 					margin: 0 5px 4px 5px;
 				}
 
