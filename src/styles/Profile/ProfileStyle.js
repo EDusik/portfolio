@@ -64,7 +64,7 @@ export const ProfileStyle = styled.div`
 			font-size: 1.1rem;
 			display: inline-flex;
 			color: ${props => props.theme.third_text};
-			margin: 1.5rem 0.625rem 2rem 0.625rem;
+			margin: 3rem 0.625rem 2rem 0.625rem;
 		}
 
 		@media only screen and (max-width: 1820px) {
@@ -108,7 +108,7 @@ export const ProfileStyle = styled.div`
 		}
 
 		@media only screen and (max-height: 780px) {
-			padding: 8vh 0;
+			padding: 10vh 0;
 			h1,
 			h2 {
 				margin: 5px 0;
