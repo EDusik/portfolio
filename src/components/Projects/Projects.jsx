@@ -1,83 +1,78 @@
 import React, { useEffect, useState, useContext } from "react";
-import Loader from "../Loader/Loader";
-import { Context } from "../../context/reducer";
-import { getRepositories } from "../../services/gitHub.service";
 import { ProjectStyle } from "../../styles/Projects/ProjectStyle";
 import { Element } from "react-scroll";
 
-const REQUEST_LIMIT = 100;
+import { Context } from "../../context/Context";
+import { SearchContext } from "../../context/SearchContext";
+
+import { NO_REPO_MESSAGE } from "../../utils/constants";
 
 const Projects = () => {
-	const { context, dispatch } = useContext(Context);
 	const emojis = require("emojis");
+	const { isLoading, hasError, repositories } = useContext(Context);
+	const { context } = useContext(SearchContext);
+
 	const [state, setState] = useState({
-		repositories: [],
-		showRepositories: []
+		projects: {},
+		showProjects: {}
 	});
 
 	useEffect(() => {
-		getRepositories(REQUEST_LIMIT)
-			.then(response => {
-				setState(previousState => ({
-					...previousState,
-					repositories: response.data,
-					showRepositories: response.data
-				}));
-				setTimeout(() => {}, 1000);
-			})
-			.catch(() => {
-				dispatch({ name: "error", value: true });
-			});
-	}, [dispatch]);
+		setState(state => ({
+			...state,
+			projects: repositories,
+			showProjects: repositories
+		}));
+	}, []);
 
 	useEffect(() => {
 		const value = context.search;
 		if (value && value.trim() !== "") {
-			const repositories = concatQuery(value);
-			const result = mapRepositories(repositories);
+			const projects = concatQuery(value);
+			const result = mapProjects(projects);
 
 			if (result !== undefined) {
 				setState(previousState => ({
 					...previousState,
-					showRepositories: result
+					showProjects: result
 				}));
 			}
 		} else {
 			setState(previousState => ({
 				...previousState,
-				showRepositories: state.repositories
+				showProjects: repositories
 			}));
 		}
 	}, [context.search]);
 
 	const concatQuery = value => {
 		value = value.toLowerCase();
-		const name = state.repositories.filter(repoName => (repoName.name ? repoName.name.toLowerCase().includes(value) : null));
-		const language = state.repositories.filter(repoLanguage => (repoLanguage.language ? repoLanguage.language.toLowerCase().includes(value) : null));
-		const description = state.repositories.filter(repoDescription => (repoDescription.description ? repoDescription.description.toLowerCase().includes(value) : null));
+		const name = state.projects.filter(projectName => (projectName.name ? projectName.name.toLowerCase().includes(value) : null));
+		const language = state.projects.filter(projectLanguage => (projectLanguage.language ? projectLanguage.language.toLowerCase().includes(value) : null));
+		const description = state.projects.filter(projectDescription => (projectDescription.description ? projectDescription.description.toLowerCase().includes(value) : null));
 
-		let listOfRepos = name.concat(language);
-		listOfRepos = listOfRepos.concat(description);
+		let listOfProjects = name.concat(language);
+		listOfProjects = listOfProjects.concat(description);
 
-		return listOfRepos;
+		return listOfProjects;
 	};
 
-	const mapRepositories = repositories => {
-		const reposMap = new Map();
-		for (const repos of repositories) {
-			reposMap.set(repos.id, repos);
+	const mapProjects = projects => {
+		const projectMap = new Map();
+		for (const project of projects) {
+			projectMap.set(project.id, project);
 		}
-		const resultOfMap = [...reposMap.values()];
+		const resultOfMap = [...projectMap.values()];
 		return resultOfMap;
 	};
 
 	return (
 		<ProjectStyle>
-			{!context.isLoading && !context.error ? (
+			{!isLoading && !hasError && (
 				<Element name="projects">
 					<div className="repositories">
-						{state.repositories && state.showRepositories.length > 0
-							? state.showRepositories.map(repo => {
+						{state.projects && state.showProjects?.length > 0
+							? state.showProjects.map(repo => {
 									return (
 										<div className="repository" key={repo.id}>
 											<a href={repo.html_url} target="_blank" rel="noopener noreferrer">
@@ -89,11 +84,9 @@ const Projects = () => {
 										</div>
 									);
 							  })
-							: !context.error && !context.isLoading && <p className="no-repo">{emojis.unicode("Nenhum repositório encontrado :sob:")}</p>}
+							: !hasError && !isLoading && <p className="no-repo">{emojis.unicode(NO_REPO_MESSAGE)}</p>}
 					</div>
 				</Element>
-			) : (
-				<Loader />
 			)}
 		</ProjectStyle>
 	);

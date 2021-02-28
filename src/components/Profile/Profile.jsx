@@ -1,29 +1,14 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useContext } from "react";
 
-import { Context } from "../../context/reducer";
-import { getUser } from "../../services/gitHub.service";
+import { Context } from "../../context/Context";
 import { ProfileStyle } from "../../styles/Profile/ProfileStyle";
 import { Element } from "react-scroll";
 
-const TEXT_BIO = "Desenvolvedor web front-end apaixonado pelo que faz. Curte escutar power metal e não consegue ficar um dia sem beber :coffee:.";
+import { TEXT_BIO, ERROR_MESSAGE } from "../../utils/constants";
 
 const Projects = () => {
-	const { context, dispatch } = useContext(Context);
+	const { profile, isLoading, hasError } = useContext(Context);
 	const emojis = require("emojis");
-	const [state, setState] = useState({
-		profile: {},
-		bio: ""
-	});
-
-	useEffect(() => {
-		getUser()
-			.then(response => {
-				setState({ profile: response.data, bio: TEXT_BIO });
-			})
-			.catch(() => {
-				dispatch({ name: "error", value: true });
-			});
-	}, [dispatch]);
 
 	return (
 		<Element name="about">
@@ -32,18 +17,18 @@ const Projects = () => {
 					<div id="particles-js"></div>
 				</div>
 				<div className="profile-details">
-					{!context.isLoading && !context.error && (
+					{!isLoading && !hasError && (
 						<>
-							<img type="image" src={state.profile.avatar_url} alt="Eduardo Dusik" />
-							<h1>Eduardo Dusik</h1>
+							<img type="image" src={profile.avatar_url} alt="Eduardo Dusik" />
+							<h1>{profile.name}</h1>
 							<h2>Desenvolvedor</h2>
 							<h2>Front-end</h2>
-							<p>{emojis.unicode(state.bio)}</p>
+							<p>{emojis.unicode(TEXT_BIO)}</p>
 						</>
 					)}
-					{!context.isLoading && context.error && (
+					{!isLoading && hasError && (
 						<React.Fragment>
-							<h3>{emojis.unicode("error loading, please try again later :sob:")}</h3>
+							<h3>{emojis.unicode(ERROR_MESSAGE)}</h3>
 						</React.Fragment>
 					)}
 				</div>
