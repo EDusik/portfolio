@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ContextProvider } from "../context/reducer";
+import { ContextProvider } from "../context/Context";
 import GlobalStyle from "../styles/Global/Global";
 
 import Footer from "../components/Footer/Footer";
