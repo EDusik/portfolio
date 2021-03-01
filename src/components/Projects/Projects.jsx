@@ -13,8 +13,8 @@ const Projects = () => {
 	const { context } = useContext(SearchContext);
 
 	const [state, setState] = useState({
-		projects: {},
-		showProjects: {}
+		projects: [],
+		showProjects: []
 	});
 
 	useEffect(() => {
