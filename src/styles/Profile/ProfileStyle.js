@@ -132,14 +132,24 @@ export const ProfileStyle = styled.div`
 			}
 
 			h2 {
-				line-height: 1.4;
+				font-size: 1.5rem;
+				line-height: 1;
 			}
+
+			p {
+				margin: 1rem 0.625rem 1rem 0.625rem;
+			}
+		}
 		}
 
 		@media only screen and (max-height: 560px) {
 			h2 {
-				font-size: 50px;
+				font-size: 1.5rem;
 				line-height: 1;
+			}
+
+			p {
+				margin: 1rem 0.625rem 1rem 0.625rem;
 			}
 		}
 	}
