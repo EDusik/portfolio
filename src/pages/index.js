@@ -26,8 +26,10 @@ const IndexPage = props => {
 	const themeMode = theme === "light" ? light : dark;
 
 	useEffect(() => {
-		const particlesJS = window.particlesJS;
-		particlesJS.load("particles-js", theme === "light" ? "/assets/json/snow.json" : "/assets/json/particles.json");
+		if (window.particlesJS) {
+			const particlesJS = window.particlesJS;
+			particlesJS.load("particles-js", theme === "light" ? "/assets/json/snow.json" : "/assets/json/particles.json");
+		}
 	}, [theme]);
 
 	return (
