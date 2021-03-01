@@ -1,12 +1,10 @@
 import React, { createContext, useReducer } from "react";
 
 const initialContext = {
-	search: "",
-	isLoading: false,
-	error: false
+	search: ""
 };
 
-const Context = createContext({});
+const SearchContext = createContext({});
 
 const reducer = (state = initialContext, action) => {
 	const newState = { ...state };
@@ -14,11 +12,11 @@ const reducer = (state = initialContext, action) => {
 	return newState;
 };
 
-const ContextProvider = ({ children }) => {
+const SearchContextProvider = ({ children }) => {
 	const [context = initialContext, dispatch] = useReducer(reducer);
 	const value = { context, dispatch };
-	return <Context.Provider value={value}>{children}</Context.Provider>;
+	return <SearchContext.Provider value={value}>{children}</SearchContext.Provider>;
 };
 
-const ContextConsumer = Context.Consumer;
-export { Context, ContextProvider, ContextConsumer };
+const ContextConsumer = SearchContext.Consumer;
+export { SearchContext, SearchContextProvider, ContextConsumer };

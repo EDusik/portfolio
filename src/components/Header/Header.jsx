@@ -4,10 +4,10 @@ import Switch from "react-switch";
 import { HeaderStyle } from "../../styles/Header/HeaderStyle";
 
 import { ThemeContext } from "styled-components";
-import { Context } from "../../context/reducer";
+import { Context } from "../../context/Context";
 
 const Header = ({ toggleTheme }) => {
-	const { context } = useContext(Context);
+	const { isLoading, hasError } = useContext(Context);
 	const { name } = useContext(ThemeContext);
 
 	const [scroll, setScroll] = useState(false);
@@ -38,7 +38,7 @@ const Header = ({ toggleTheme }) => {
 
 	return (
 		<HeaderStyle>
-			{!context.isLoading && !context.error && (
+			{!isLoading && !hasError && (
 				<header className={"header " + (scroll ? "color" : "transparent")}>
 					<div className="container">
 						<nav className="navbar">
