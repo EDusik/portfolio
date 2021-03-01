@@ -64,7 +64,7 @@ export const ProfileStyle = styled.div`
 			font-size: 1.1rem;
 			display: inline-flex;
 			color: ${props => props.theme.third_text};
-			margin: 3rem 0.625rem 2rem 0.625rem;
+			margin: 2rem 0.625rem 3rem 0.625rem;
 		}
 
 		@media only screen and (max-width: 1820px) {
@@ -95,6 +95,7 @@ export const ProfileStyle = styled.div`
 			p {
 				max-width: 100%;
 				font-size: 4vw;
+				margin: 0.5rem 0.625rem 0.5rem 0.625rem;
 			}
 
 			h1 {
@@ -102,16 +103,21 @@ export const ProfileStyle = styled.div`
 			}
 
 			h2 {
-				font-size: 1.2rem;
-				line-height: 0.8rem;
+				font-size: 1.8rem;
+				line-height: 2rem;
+			}
+			&:last-child {
+				line-height: 1rem;
 			}
 		}
 
 		@media only screen and (max-height: 780px) {
 			padding: 10vh 0;
-			h1,
+			h1 {
+				margin: 1.5rem 0.625rem 1rem 0.625rem;
+			}
 			h2 {
-				margin: 5px 0;
+				margin: 0rem 0.625rem 0rem 0.625rem;
 			}
 
 			img {
