@@ -34,22 +34,25 @@ const IndexPage = props => {
 
 	return (
 		<ContextProvider profile={props.profile} repositories={props.repositories} isLoading={props.isLoading}>
-			<SearchContextProvider>
-				<ThemeProvider theme={themeMode}>
-					<Head>
-						<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
-						<title>Eduardo Dusik - Desenvolvedor Front-End</title>
-					</Head>
+			{!props.isLoading ? (
+				<SearchContextProvider>
+					<ThemeProvider theme={themeMode}>
+						<Head>
+							<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
+							<title>Eduardo Dusik - Desenvolvedor Front-End</title>
+						</Head>
 
-					<GlobalStyle />
-					<Header toggleTheme={toggleTheme} />
-					<Profile />
-					<Search />
-					<Projects />
-					<Footer />
-					{props.isLoading && <Loader />}
-				</ThemeProvider>{" "}
-			</SearchContextProvider>
+						<GlobalStyle />
+						<Header toggleTheme={toggleTheme} />
+						<Profile />
+						<Search />
+						<Projects />
+						<Footer />
+					</ThemeProvider>
+				</SearchContextProvider>
+			) : (
+				<Loader />
+			)}
 		</ContextProvider>
 	);
 };
