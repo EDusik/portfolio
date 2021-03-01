@@ -131,13 +131,17 @@ export const ProfileStyle = styled.div`
 				height: 150px;
 			}
 
+      h1 {
+				margin: .5rem 0.625rem .4rem 0.625rem;
+			}
+
 			h2 {
 				font-size: 1.5rem;
 				line-height: 1;
 			}
 
 			p {
-				margin: 1rem 0.625rem 1rem 0.625rem;
+				margin: .7rem 0.625rem .7rem 0.625rem;
 			}
 		}
 		}
