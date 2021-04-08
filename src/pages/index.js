@@ -59,7 +59,7 @@ const IndexPage = props => {
 
 export default IndexPage;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const repositories = await getRepositories(LIMIT);
 	const profile = await getUser();
 
