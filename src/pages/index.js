@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import Loader from "../components/Loader/Loader";
 import Profile from "../components/Profile/Profile";
 import Projects from "../components/Projects/Projects";
 import Search from "../components/Search/Search";
@@ -33,26 +32,22 @@ const IndexPage = props => {
 	}, [theme]);
 
 	return (
-		<ContextProvider profile={props.profile} repositories={props.repositories} isLoading={props.isLoading}>
-			{!props.isLoading ? (
-				<SearchContextProvider>
-					<ThemeProvider theme={themeMode}>
-						<Head>
-							<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
-							<title>Eduardo Dusik - Desenvolvedor Front-End</title>
-						</Head>
+		<ContextProvider profile={props.profile} repositories={props.repositories}>
+			<SearchContextProvider>
+				<ThemeProvider theme={themeMode}>
+					<Head>
+						<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
+						<title>Eduardo Dusik - Desenvolvedor Front-End</title>
+					</Head>
 
-						<GlobalStyle />
-						<Header toggleTheme={toggleTheme} />
-						<Profile />
-						<Search />
-						<Projects />
-						<Footer />
-					</ThemeProvider>
-				</SearchContextProvider>
-			) : (
-				<Loader />
-			)}
+					<GlobalStyle />
+					<Header toggleTheme={toggleTheme} />
+					<Profile />
+					<Search />
+					<Projects />
+					<Footer />
+				</ThemeProvider>
+			</SearchContextProvider>
 		</ContextProvider>
 	);
 };
@@ -66,8 +61,7 @@ export const getStaticProps = async () => {
 	return {
 		props: {
 			profile: profile.data,
-			repositories: repositories.data,
-			isLoading: profile ? false : true
+			repositories: repositories.data
 		}
 	};
 };
