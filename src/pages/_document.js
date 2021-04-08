@@ -29,6 +29,7 @@ export default class MyDocument extends Document {
 				<body>
 					<Main />
 					<NextScript />
+
 					<script type="text/javascript" src="/assets/js/script.js"></script>
 				</body>
 			</Html>
