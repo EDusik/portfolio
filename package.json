@@ -25,7 +25,7 @@
 		"@testing-library/user-event": "^7.1.2",
 		"axios": "^0.21.1",
 		"emojis": "^1.0.10",
-		"next": "^10.0.5",
+		"next": "^11.1.0",
 		"node-sass": "^4.13.1",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1",
