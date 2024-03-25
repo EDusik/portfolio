@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProjectStyle = styled.div`
+export const ProjectStyled = styled.div`
 	.repositories {
 		display: flex;
 		flex-wrap: wrap;

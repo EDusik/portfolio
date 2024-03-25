@@ -1,43 +1,21 @@
 import { Link } from "react-scroll";
 import React, { useEffect, useState, useContext } from "react";
 import Switch from "react-switch";
-import { HeaderStyle } from "../../styles/Header/HeaderStyle";
+import { HeaderStyled } from "./HeaderStyled";
 
 import { ThemeContext } from "styled-components";
 import { Context } from "../../context/Context";
 
+import { useScroll } from "../../hooks/useScroll";
+import { IContextProps } from "../../context/types/Context.types";
+
 const Header = ({ toggleTheme }) => {
-	const { isLoading, hasError } = useContext(Context);
+	const { isLoading, hasError } = useContext<IContextProps>(Context);
 	const { name } = useContext(ThemeContext);
-
-	const [scroll, setScroll] = useState(false);
-	const [bottom, setBottom] = useState(false);
-	const navbarHeight = 56;
-
-	useEffect(() => {
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	});
-
-	const handleScroll = () => {
-		document.addEventListener("scroll", () => {
-			const about = window.scrollY > navbarHeight;
-			if (about !== scroll) {
-				setScroll(about);
-			}
-		});
-
-		window.onscroll = () => {
-			if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
-				setBottom(true);
-			} else {
-				setBottom(false);
-			}
-		};
-	};
+	const { scroll, bottom } = useScroll();
 
 	return (
-		<HeaderStyle>
+		<HeaderStyled>
 			{!isLoading && !hasError && (
 				<header className={"header " + (scroll ? "color" : "transparent")}>
 					<div className="container">
@@ -83,7 +61,7 @@ const Header = ({ toggleTheme }) => {
 					</div>
 				</header>
 			)}
-		</HeaderStyle>
+		</HeaderStyled>
 	);
 };
 

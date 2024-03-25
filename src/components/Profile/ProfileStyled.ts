@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProfileStyle = styled.div`
+export const ProfileStyled = styled.div`
 	font-family: "Open Sans", "Roboto", "sans-serif";
 	color: ${props => props.theme.primary_text};
 	text-align: center;
@@ -156,5 +156,4 @@ export const ProfileStyle = styled.div`
 				margin: 1rem 0.625rem 1rem 0.625rem;
 			}
 		}
-	}
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderStyle = styled.div`
+export const HeaderStyled = styled.div`
 	.header {
 		.transparent {
 			background-color: ${props => props.theme.navbar_background};

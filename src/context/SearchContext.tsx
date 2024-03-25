@@ -1,10 +1,16 @@
 import React, { createContext, useReducer } from "react";
+import { ISearchContextProps } from "./types/SearchContext.types";
 
 const initialContext = {
 	search: ""
 };
 
-const SearchContext = createContext({});
+const SearchContext = createContext<ISearchContextProps | undefined>({
+	context: {
+		search: ""
+	},
+	dispatch: () => {}
+});
 
 const reducer = (state = initialContext, action) => {
 	const newState = { ...state };
@@ -13,7 +19,7 @@ const reducer = (state = initialContext, action) => {
 };
 
 const SearchContextProvider = ({ children }) => {
-	const [context = initialContext, dispatch] = useReducer(reducer);
+	const [context, dispatch] = useReducer(reducer, initialContext);
 	const value = { context, dispatch };
 	return <SearchContext.Provider value={value}>{children}</SearchContext.Provider>;
 };

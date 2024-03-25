@@ -6,41 +6,42 @@ import { AiFillLinkedin as Linkedin } from "react-icons/ai";
 import { ImBlogger2 as Blogger } from "react-icons/im";
 import { FaGithubSquare as GitHub } from "react-icons/fa";
 
-import { FooterStyle } from "../../styles/Footer/FooterStyle";
+import { FooterStyled } from "./FooterStyled";
+import { IContextProps } from "../../context/types/Context.types";
 
 const Footer = () => {
-	const { isLoading, hasError } = useContext(Context);
-	const [state] = useState({
-		name: "Eduardo Dusik",
-		gitHub: "https://github.com/EDusik",
-		email: "eduardodusik@gmail.com",
-		linkedin: "https://www.linkedin.com/in/eduardo-dos-santos-dusik-095100120/",
-		blogger: "https://www.eduardodusik.dev"
+	const { isLoading, hasError } = useContext<IContextProps>(Context) as IContextProps;
+	const [user] = useState({
+		name: process.env.NEXT_PUBLIC_NAME,
+		gitHub: process.env.NEXT_PUBLIC_GITHUB,
+		email: process.env.NEXT_PUBLIC_EMAIL,
+		linkedIn: process.env.NEXT_PUBLIC_LINKEDIN,
+		blogger: process.env.NEXT_PUBLIC_BLOGGER
 	});
 
 	return (
-		<FooterStyle>
+		<FooterStyled>
 			{!isLoading && !hasError && (
 				<Element name="contact">
 					<div className="footer">
 						<div className="social">
-							<a href={state.gitHub} target="_blank" rel="noopener noreferrer">
+							<a href={user.gitHub} target="_blank" rel="noopener noreferrer">
 								<GitHub title="GitHub" className="github" />
 							</a>
-							<a href={state.linkedin} target="_blank" rel="noopener noreferrer">
+							<a href={user.linkedIn} target="_blank" rel="noopener noreferrer">
 								<Linkedin title="LinkedIn" />
 							</a>
-							<a href={state.blogger} target="_blank" rel="noopener noreferrer">
+							<a href={user.blogger} target="_blank" rel="noopener noreferrer">
 								<Blogger title="Blog" className="blogger" />
 							</a>
 						</div>
 						<div className="copyright">
-							Desenvolvido por <strong>{state.name}</strong>
+							Desenvolvido por <strong>{user.name}</strong>
 						</div>
 					</div>
 				</Element>
 			)}
-		</FooterStyle>
+		</FooterStyled>
 	);
 };
 
