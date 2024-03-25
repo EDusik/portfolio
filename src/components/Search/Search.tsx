@@ -6,13 +6,15 @@ import { SearchContext } from "../../context/SearchContext";
 import { SearchStyled } from "./SearchStyled";
 import { ISearchContextProps } from "../../context/types/SearchContext.types";
 import { IContextProps } from "../../context/types/Context.types";
+import { useTranslation } from 'react-i18next';
 
 const Search = () => {
 	const { isLoading, hasError } = useContext<IContextProps>(Context);
 	const { dispatch } = useContext<ISearchContextProps>(SearchContext);
+	const { t } = useTranslation();
 
 	const onSearchChange = (value: string) => {
-		dispatch({ action: "search", payload: value });
+		dispatch({ name: "search", value: value });
 	};
 
 	return (
@@ -25,7 +27,7 @@ const Search = () => {
 					aria-label="search" 
 					id="search" 
 					onChange={event => onSearchChange(event.target.value)}
-					placeholder="Pesquisar..." 
+					placeholder={t("search.placeholder")} 
 				/>
 				</div>
 			)}

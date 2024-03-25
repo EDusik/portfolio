@@ -8,9 +8,11 @@ import { FaGithubSquare as GitHub } from "react-icons/fa";
 
 import { FooterStyled } from "./FooterStyled";
 import { IContextProps } from "../../context/types/Context.types";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
 	const { isLoading, hasError } = useContext<IContextProps>(Context) as IContextProps;
+	const { t } = useTranslation();
 	const [user] = useState({
 		name: process.env.NEXT_PUBLIC_NAME,
 		gitHub: process.env.NEXT_PUBLIC_GITHUB,
@@ -36,7 +38,7 @@ const Footer = () => {
 							</a>
 						</div>
 						<div className="copyright">
-							Desenvolvido por <strong>{user.name}</strong>
+							{t("footer.copyright")} <strong>{user.name}</strong>
 						</div>
 					</div>
 				</Element>

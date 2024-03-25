@@ -1,23 +1,24 @@
 import React, { useEffect, useState, useContext } from "react";
+
 import { ProjectStyled } from "./ProjectStyled";
 import { Element } from "react-scroll";
-
 import { Context } from "../../context/Context";
 import { SearchContext } from "../../context/SearchContext";
-
-import { NO_REPO_MESSAGE } from "../../utils/constants";
 import { IRepository } from "../../types/types";
-
+import { useTranslation } from 'react-i18next';
 
 const Projects = () => {
 	const emojis = require("emojis");
 	const { isLoading, hasError, repositories } = useContext(Context);
 	const { context } = useContext(SearchContext);
+	const { t } = useTranslation();
 
 	const [state, setState] = useState({
 		projects: [],
 		showProjects: []
 	});
+
+	console.log(context)
 
 	useEffect(() => {
 		setState(state => ({
@@ -86,7 +87,7 @@ const Projects = () => {
 										</div>
 									);
 							})
-							: !hasError && !isLoading && <p className="no-repo">{emojis.unicode(NO_REPO_MESSAGE)}</p>}
+							: !hasError && !isLoading && <p className="no-repo">{emojis.unicode(t("search.noRepo"))}</p>}
 					</div>
 				</Element>
 			)}

@@ -12,14 +12,16 @@ import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { ContextProvider } from "../context/Context";
 import { SearchContextProvider } from "../context/SearchContext";
+import { getRepositories, getUser } from "../services/gitHub.service";
 
 import GlobalStyle from "../styles/Global/Global";
 import { useDarkMode } from "../hooks/useDarkMode";
+import { I18nextProvider } from 'react-i18next';
+import { LIMIT } from "../utils/constants";
+
 import light from "../themes/light";
 import dark from "../themes/dark";
-
-import { getRepositories, getUser } from "../services/gitHub.service";
-import { LIMIT } from "../utils/constants";
+import i18n from '../locales/i18n'
 
 declare const window: {
 	particlesJS: {
@@ -38,28 +40,30 @@ const IndexPage = props => {
 		}
 	}, [theme]);
 
-	return (
-		<ContextProvider profile={props.profile} repositories={props.repositories} isLoading={props.isLoading}>
-			{!props.isLoading ? (
-				<SearchContextProvider>
-					<ThemeProvider theme={themeMode}>
-						<Head>
-							<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
-							<title>Eduardo Dusik - Desenvolvedor Front-End</title>
-						</Head>
+	return ( 
+		<I18nextProvider i18n={i18n} defaultNS={'translation'}>
+			<ContextProvider profile={props.profile} repositories={props.repositories} isLoading={props.isLoading}>
+				{!props.isLoading ? (
+					<SearchContextProvider>
+						<ThemeProvider theme={themeMode}>
+							<Head>
+								<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
+								<title>Eduardo Dusik - Desenvolvedor Front-End</title>
+							</Head>
 
-						<GlobalStyle />
-						<Header toggleTheme={toggleTheme} />
-						<Profile />
-						<Search />
-						<Projects />
-						<Footer />
-					</ThemeProvider>
-				</SearchContextProvider>
-			) : (
-				<Loader />
-			)}
-		</ContextProvider>
+							<GlobalStyle />
+							<Header toggleTheme={toggleTheme} />
+							<Profile />
+							<Search />
+							<Projects />
+							<Footer />
+						</ThemeProvider>
+					</SearchContextProvider>
+				) : (
+					<Loader />
+				)}
+			</ContextProvider>
+		</I18nextProvider>
 	);
 };
 

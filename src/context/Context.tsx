@@ -4,7 +4,7 @@ import { IProfile, IRepository } from "../types/types";
 
 export const Context = createContext<IContextProps | undefined>(undefined);
 
-interface ContextProviderProps {
+type TContextProvider = {
   children: ReactNode;
   profile?: IProfile;
   repositories?: IRepository[];
@@ -12,7 +12,7 @@ interface ContextProviderProps {
   hasError?: boolean;
 }
 
-export const ContextProvider = ({ children, ...rest }: ContextProviderProps) => {
+export const ContextProvider = ({ children, ...rest }: TContextProvider) => {
   const [profile, setProfile] = useState<any>(rest.profile ?? {});
   const [repositories, setRepositories] = useState<any[]>(rest.repositories ?? []);
   const [isLoading, setIsLoading] = useState<boolean>(rest.isLoading ?? true);

@@ -1,10 +1,10 @@
 export interface IAction {
-	action: string;
-	payload: string;
+    name: string;
+    value: string;
 }
 
 export interface ISearchContextProps {
-	context: {
+    context: {
         search: string;
     };
     dispatch: React.Dispatch<IAction>;
