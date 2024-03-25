@@ -27,6 +27,10 @@ export const ProfileStyled = styled.div`
 		padding: 10vh 0px;
 		position: absolute;
 
+		@media only screen and (max-width: 510px) {
+			padding: 15vh 0px;
+		}
+
 		img {
 			border-radius: 50%;
 			width: 200px;

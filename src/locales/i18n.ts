@@ -18,7 +18,7 @@ const resources = {
                 error: "Error loading, please try again later :sob:",
             },
             search: {
-                placeholder: "Search for a repository...",
+                placeholder: "Search...",
                 noRepo: "No repositories found :sob:"
             },
             footer: {
@@ -41,7 +41,7 @@ const resources = {
                 error: "Erro ao carregar, tente novamente mais tarde :sob:",
             },
             search: {
-                placeholder: "Procure um repositório...",
+                placeholder: "Pesquisar...",
                 noRepo: "Nenhum repositório encontrado :sob:"
             },
             footer: {

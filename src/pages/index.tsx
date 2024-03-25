@@ -16,7 +16,8 @@ import { getRepositories, getUser } from "../services/gitHub.service";
 
 import GlobalStyle from "../styles/Global/Global";
 import { useDarkMode } from "../hooks/useDarkMode";
-import { I18nextProvider } from 'react-i18next';
+import { I18nextProvider, useTranslation } from 'react-i18next';
+import { IProfile, IRepository } from "../types/types";
 import { LIMIT } from "../utils/constants";
 
 import light from "../themes/light";
@@ -29,9 +30,16 @@ declare const window: {
 	};
 } & Window;
 
-const IndexPage = props => {
+type IndexPageProps = {
+	profile: IProfile;
+	repositories: IRepository[];
+	isLoading: boolean;
+}
+
+const IndexPage = ({ profile, repositories, isLoading } : IndexPageProps) => {
 	const [theme, toggleTheme] = useDarkMode();
 	const themeMode = theme === "light" ? light : dark;
+	const { t } = useTranslation();
 
 	useLayoutEffect(() => {
 		if (window.particlesJS) {
@@ -42,13 +50,13 @@ const IndexPage = props => {
 
 	return ( 
 		<I18nextProvider i18n={i18n} defaultNS={'translation'}>
-			<ContextProvider profile={props.profile} repositories={props.repositories} isLoading={props.isLoading}>
-				{!props.isLoading ? (
+			<ContextProvider profile={profile} repositories={repositories} isLoading={isLoading}>
+				{!isLoading ? (
 					<SearchContextProvider>
 						<ThemeProvider theme={themeMode}>
 							<Head>
 								<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 user-scalable=no" />
-								<title>Eduardo Dusik - Desenvolvedor Front-End</title>
+								<title>{process.env.NEXT_PUBLIC_NAME} - {t("profile.role")}</title>
 							</Head>
 
 							<GlobalStyle />

@@ -32,8 +32,15 @@ export const HeaderStyled = styled.div`
 
 			.navbar {
 				color: ${props => props.theme.navbar_button};
-				width: 90%;
-				padding-left: 10%;
+				width: 80%;
+				padding-left: 20%;
+
+				@media only screen and (max-width: 510px) {
+					width: 100%;
+					padding-left: 0;
+					padding: 14px;
+				}
+
 				ul {
 					padding-left: 0;
 					text-align: center;
@@ -41,20 +48,12 @@ export const HeaderStyled = styled.div`
 						display: inline;
 						padding: 0.5em 2.8em;
 
+						@media only screen and (max-width: 720px) {
+							padding: 0.5em 1.2em;
+						}
+
 						@media only screen and (max-width: 632px) {
-							padding: 0.5em 1.8em;
-						}
-
-						@media only screen and (max-width: 510px) {
 							padding: 0.5em 1em;
-						}
-
-						@media only screen and (max-width: 420px) {
-							padding: 0.2em 0.7em;
-						}
-
-						@media only screen and (max-width: 340px) {
-							padding: 0.1em 0.5em;
 						}
 
 						a {
@@ -82,7 +81,14 @@ export const HeaderStyled = styled.div`
 		}
 
 		.switch {
-			width: 10%;
+			display: flex;
+			align-items: center;
+			width: 20%;
+
+			@media only screen and (max-width: 510px) {
+				width: 100%;
+				justify-content: center;
+			}
 		}
 	}
 
@@ -98,6 +104,10 @@ export const HeaderStyled = styled.div`
 		position: fixed;
 		height: 52px;
 		background-color: ${props => props.theme.navbar_background_scrolled};
+
+		@media only screen and (max-width: 510px) {
+			height: 94px;
+		}
 
 		.navbar {
 			ul {

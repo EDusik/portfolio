@@ -21,7 +21,7 @@ const Projects = () => {
 				<div className="profile-details">
 					{!isLoading && !hasError && (
 						<>
-							<img src={profile.avatar_url} alt="Eduardo Dusik" />
+							<img src={profile.avatar_url} alt={process.env.NEXT_PUBLIC_NAME} />
 							<h1>{profile.name}</h1>
 							<h2>{t("profile.role")}</h2>
 							<p>{emojis.unicode(t("profile.bio"))}</p>
