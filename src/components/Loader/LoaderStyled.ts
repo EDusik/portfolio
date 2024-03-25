@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoaderStyle = styled.div`
+export const LoaderStyled = styled.div`
 	.loader span {
 		position: fixed;
 		display: inline-block;

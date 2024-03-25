@@ -1,14 +1,14 @@
 import React from "react";
-import { LoaderStyle } from "../../styles/Loader/LoaderStyle";
+import { LoaderStyled } from "./LoaderStyled";
 
 const Loader = () => {
 	return (
-		<LoaderStyle>
+		<LoaderStyled>
 			<div className="loader">
 				<span></span>
 				<span></span>
 			</div>
-		</LoaderStyle>
+		</LoaderStyled>
 	);
 };
 

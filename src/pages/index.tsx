@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
@@ -14,18 +14,24 @@ import { ContextProvider } from "../context/Context";
 import { SearchContextProvider } from "../context/SearchContext";
 
 import GlobalStyle from "../styles/Global/Global";
-import { useDarkMode } from "../utils/useDarkMode";
+import { useDarkMode } from "../hooks/useDarkMode";
 import light from "../themes/light";
 import dark from "../themes/dark";
 
 import { getRepositories, getUser } from "../services/gitHub.service";
 import { LIMIT } from "../utils/constants";
 
+declare const window: {
+	particlesJS: {
+		load: (id: string, path: string, callback?: () => void) => void;
+	};
+} & Window;
+
 const IndexPage = props => {
 	const [theme, toggleTheme] = useDarkMode();
 	const themeMode = theme === "light" ? light : dark;
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (window.particlesJS) {
 			const particlesJS = window.particlesJS;
 			particlesJS.load("particles-js", theme === "light" ? "/assets/json/snow.json" : "/assets/json/particles.json");
@@ -62,7 +68,7 @@ export default IndexPage;
 export const getStaticProps = async () => {
 	const repositories = await getRepositories(LIMIT);
 	const profile = await getUser();
-
+	
 	return {
 		props: {
 			profile: profile.data,

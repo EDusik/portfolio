@@ -1,25 +1,27 @@
 import React, { useContext } from "react";
 
 import { Context } from "../../context/Context";
-import { ProfileStyle } from "../../styles/Profile/ProfileStyle";
+import { ProfileStyled } from "./ProfileStyled";
 import { Element } from "react-scroll";
 
+const emojis = require("emojis");
+
 import { TEXT_BIO, ERROR_MESSAGE } from "../../utils/constants";
+import { IContextProps } from "../../context/types/Context.types";
 
 const Projects = () => {
-	const { profile, isLoading, hasError } = useContext(Context);
-	const emojis = require("emojis");
+	const { profile, isLoading, hasError } = useContext<IContextProps>(Context);
 
 	return (
 		<Element name="about">
-			<ProfileStyle>
+			<ProfileStyled>
 				<div className="background-particles-js">
 					<div id="particles-js"></div>
 				</div>
 				<div className="profile-details">
 					{!isLoading && !hasError && (
 						<>
-							<img type="image" src={profile.avatar_url} alt="Eduardo Dusik" />
+							<img src={profile.avatar_url} alt="Eduardo Dusik" />
 							<h1>{profile.name}</h1>
 							<h2>Desenvolvedor</h2>
 							<h2>Front-end</h2>
@@ -32,7 +34,7 @@ const Projects = () => {
 						</React.Fragment>
 					)}
 				</div>
-			</ProfileStyle>
+			</ProfileStyled>
 		</Element>
 	);
 };

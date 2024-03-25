@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FooterStyle = styled.div`
+export const FooterStyled = styled.div`
 	.footer {
 		.social {
 			height: 200px;

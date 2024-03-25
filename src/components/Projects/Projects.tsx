@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
-import { ProjectStyle } from "../../styles/Projects/ProjectStyle";
+import { ProjectStyled } from "./ProjectStyled";
 import { Element } from "react-scroll";
 
 import { Context } from "../../context/Context";
 import { SearchContext } from "../../context/SearchContext";
 
 import { NO_REPO_MESSAGE } from "../../utils/constants";
+import { IRepository } from "../../types/types";
+
 
 const Projects = () => {
 	const emojis = require("emojis");
@@ -58,16 +60,16 @@ const Projects = () => {
 	};
 
 	const mapProjects = projects => {
-		const projectMap = new Map();
+		const projectMap = new Map<number, IRepository>();
 		for (const project of projects) {
 			projectMap.set(project.id, project);
 		}
-		const resultOfMap = [...projectMap.values()];
+		const resultOfMap = Array.from(projectMap.values());
 		return resultOfMap;
 	};
 
 	return (
-		<ProjectStyle>
+		<ProjectStyled>
 			{!isLoading && !hasError && (
 				<Element name="projects">
 					<div className="repositories">
@@ -83,12 +85,12 @@ const Projects = () => {
 											<p className="language">{repo.language ? repo.language : ""}</p>
 										</div>
 									);
-							  })
+							})
 							: !hasError && !isLoading && <p className="no-repo">{emojis.unicode(NO_REPO_MESSAGE)}</p>}
 					</div>
 				</Element>
 			)}
-		</ProjectStyle>
+		</ProjectStyled>
 	);
 };
 

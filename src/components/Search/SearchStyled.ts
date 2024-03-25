@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SearchStyle = styled.div`
+export const SearchStyled = styled.div`
 	.search {
 		display: flex;
 		flex-wrap: wrap;
