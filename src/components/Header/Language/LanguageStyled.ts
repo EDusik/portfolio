@@ -15,4 +15,9 @@ export const LanguageButtonStyled = styled.button`
     font-size: 26px;
     margin: 2px 4px 0 0;
     opacity: .3;
+
+    svg {
+        width: 22px;
+        height: 22px;
+    }
 `;

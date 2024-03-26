@@ -9,7 +9,7 @@ import { Context } from "../../context/Context";
 import { useScroll } from "../../hooks/useScroll";
 import { IContextProps } from "../../context/types/Context.types";
 import { useTranslation } from 'react-i18next';
-import Language from "../Language/Language";
+import Language from "./Language/Language";
 
 const Header = ({ toggleTheme }) => {
 	const { isLoading, hasError } = useContext<IContextProps>(Context);
@@ -41,7 +41,7 @@ const Header = ({ toggleTheme }) => {
 								</li>
 							</ul>
 						</nav>
-						
+
 						<div className="switch">
 							<Language />
 							<Switch

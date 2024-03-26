@@ -18,8 +18,6 @@ const Projects = () => {
 		showProjects: []
 	});
 
-	console.log(context)
-
 	useEffect(() => {
 		setState(state => ({
 			...state,
@@ -76,16 +74,16 @@ const Projects = () => {
 					<div className="repositories">
 						{state.projects && state.showProjects?.length > 0
 							? state.showProjects.map(repo => {
-									return (
-										<div className="repository" key={repo.id}>
-											<a href={repo.html_url} target="_blank" rel="noopener noreferrer">
-												{repo.name}
-											</a>
-											<i>{repo.full_name ? repo.full_name : ""}</i>
-											<p>{emojis.unicode(repo.description ? repo.description : "")}</p>
-											<p className="language">{repo.language ? repo.language : ""}</p>
-										</div>
-									);
+								return (
+									<div className="repository" key={repo.id}>
+										<a href={repo.html_url} target="_blank" rel="noopener noreferrer">
+											{repo.name}
+										</a>
+										<i>{repo.full_name ? repo.full_name : ""}</i>
+										<p>{emojis.unicode(repo.description ? repo.description : "")}</p>
+										<p className="language">{repo.language ? repo.language : ""}</p>
+									</div>
+								);
 							})
 							: !hasError && !isLoading && <p className="no-repo">{emojis.unicode(t("search.noRepo"))}</p>}
 					</div>

@@ -1,36 +1,35 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import { LanguageButtonStyled, LanguageStyled } from "./LanguageStyled";
-import { BRAZIL_FLAG, USA_FLAG } from "../../utils/constants";
+import { UnitedStatesFlag } from "../../assets/flags/UnitedStatesFlag";
+import { BrazilFlag } from "../../assets/flags/BrazilFlag";
 
 const Language = () => {
-    const emojis = require("emojis");
     const { i18n } = useTranslation();
     const isCurrentLanguage = (language: string) => i18n.language === language;
-    console.log(isCurrentLanguage('en'));
 
     const changeLanguage = (language: string) => {
         i18n.changeLanguage(language);
     };
 
-	return (
+    return (
         <LanguageStyled>
-            <LanguageButtonStyled 
-                onClick={() => changeLanguage('pt_br')} 
+            <LanguageButtonStyled
+                onClick={() => changeLanguage('pt_br')}
                 className={isCurrentLanguage('pt_br') ? "language-selected" : ""}
                 aria-label="Change language to Portuguese"
             >
-                {BRAZIL_FLAG}
+                <BrazilFlag />
             </LanguageButtonStyled>
-            <LanguageButtonStyled 
-                onClick={() => changeLanguage('en')} 
+            <LanguageButtonStyled
+                onClick={() => changeLanguage('en')}
                 className={isCurrentLanguage('en') ? "language-selected" : ""}
                 aria-label="Change language to English"
             >
-                {USA_FLAG}
+                <UnitedStatesFlag />
             </LanguageButtonStyled>
         </LanguageStyled>
-	);
+    );
 };
 
 export default Language;
