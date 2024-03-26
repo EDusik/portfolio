@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import { LanguageButtonStyled, LanguageStyled } from "./LanguageStyled";
+import { BRAZIL_FLAG, USA_FLAG } from "../../utils/constants";
 
 const Language = () => {
     const emojis = require("emojis");
@@ -19,14 +20,14 @@ const Language = () => {
                 className={isCurrentLanguage('pt_br') ? "language-selected" : ""}
                 aria-label="Change language to Portuguese"
             >
-                {emojis.unicode("🇧🇷")}
+                {emojis.unicode(BRAZIL_FLAG)}
             </LanguageButtonStyled>
             <LanguageButtonStyled 
                 onClick={() => changeLanguage('en')} 
                 className={isCurrentLanguage('en') ? "language-selected" : ""}
                 aria-label="Change language to English"
             >
-                {emojis.unicode("🇺🇸")}
+                {emojis.unicode(USA_FLAG)}
             </LanguageButtonStyled>
         </LanguageStyled>
 	);
