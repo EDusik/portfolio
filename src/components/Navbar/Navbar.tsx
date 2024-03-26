@@ -10,11 +10,9 @@ import { useTranslation } from 'react-i18next';
 import Language from "./Language/Language";
 import TogglerSwitch from "./Switch/Switch";
 
-interface INavbarProps {
-	toggleTheme: string | boolean | (() => void);
-}
 
-const Navbar = ({ toggleTheme }: INavbarProps) => {
+
+const Navbar = ({ toggleTheme }) => {
 	const { isLoading, hasError } = useContext<IContextProps>(Context);
 	const { scroll, bottom } = useScroll();
 	const { t } = useTranslation();
@@ -45,7 +43,7 @@ const Navbar = ({ toggleTheme }: INavbarProps) => {
 						</nav>
 						<div className="language-switch">
 							<Language />
-							<TogglerSwitch toggleTheme={() => toggleTheme} />
+							<TogglerSwitch toggleTheme={toggleTheme} />
 						</div>
 					</div>
 				</header>
