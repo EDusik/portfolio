@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react";
 
 import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import Navbar from "../components/Navbar/Navbar";
 import Loader from "../components/Loader/Loader";
 import Profile from "../components/Profile/Profile";
 import Projects from "../components/Projects/Projects";
@@ -36,7 +36,7 @@ type IndexPageProps = {
 	isLoading: boolean;
 }
 
-const IndexPage = ({ profile, repositories, isLoading } : IndexPageProps) => {
+const IndexPage = ({ profile, repositories, isLoading }: IndexPageProps) => {
 	const [theme, toggleTheme] = useDarkMode();
 	const themeMode = theme === "light" ? light : dark;
 	const { t } = useTranslation();
@@ -48,7 +48,7 @@ const IndexPage = ({ profile, repositories, isLoading } : IndexPageProps) => {
 		}
 	}, [theme]);
 
-	return ( 
+	return (
 		<I18nextProvider i18n={i18n} defaultNS={'translation'}>
 			<ContextProvider profile={profile} repositories={repositories} isLoading={isLoading}>
 				{!isLoading ? (
@@ -60,7 +60,7 @@ const IndexPage = ({ profile, repositories, isLoading } : IndexPageProps) => {
 							</Head>
 
 							<GlobalStyle />
-							<Header toggleTheme={toggleTheme} />
+							<Navbar toggleTheme={toggleTheme} />
 							<Profile />
 							<Search />
 							<Projects />
@@ -80,7 +80,7 @@ export default IndexPage;
 export const getStaticProps = async () => {
 	const repositories = await getRepositories(LIMIT);
 	const profile = await getUser();
-	
+
 	return {
 		props: {
 			profile: profile.data,

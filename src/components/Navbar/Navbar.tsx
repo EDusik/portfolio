@@ -1,24 +1,26 @@
 import { Link } from "react-scroll";
-import React, { useEffect, useState, useContext } from "react";
-import Switch from "react-switch";
-import { HeaderStyled } from "./HeaderStyled";
+import React, { useContext } from "react";
 
-import { ThemeContext } from "styled-components";
+import { NavbarStyled } from "./NavbarStyled";
 import { Context } from "../../context/Context";
-
 import { useScroll } from "../../hooks/useScroll";
 import { IContextProps } from "../../context/types/Context.types";
 import { useTranslation } from 'react-i18next';
-import Language from "./Language/Language";
 
-const Header = ({ toggleTheme }) => {
+import Language from "./Language/Language";
+import TogglerSwitch from "./Switch/Switch";
+
+interface INavbarProps {
+	toggleTheme: string | boolean | (() => void)
+}
+
+const Navbar = ({ toggleTheme }: INavbarProps) => {
 	const { isLoading, hasError } = useContext<IContextProps>(Context);
-	const { name } = useContext(ThemeContext);
 	const { scroll, bottom } = useScroll();
 	const { t } = useTranslation();
 
 	return (
-		<HeaderStyled>
+		<NavbarStyled>
 			{!isLoading && !hasError && (
 				<header className={"header " + (scroll ? "color" : "transparent")}>
 					<div className="container">
@@ -41,33 +43,15 @@ const Header = ({ toggleTheme }) => {
 								</li>
 							</ul>
 						</nav>
-
-						<div className="switch">
+						<div className="language-switch">
 							<Language />
-							<Switch
-								name="switch"
-								id="switch"
-								aria-checked={name === "dark"}
-								aria-readonly="false"
-								aria-label="switch"
-								offHandleColor="#E0E0DC"
-								onHandleColor="#E0E0DC"
-								onChange={toggleTheme}
-								checked={name === "dark"}
-								checkedIcon={false}
-								uncheckedIcon={false}
-								height={14}
-								width={32}
-								offColor="#CCCCCC"
-								handleDiameter={20}
-								onColor="#6272a4"
-							/>
+							<TogglerSwitch toggleTheme={toggleTheme} />
 						</div>
 					</div>
 				</header>
 			)}
-		</HeaderStyled>
+		</NavbarStyled>
 	);
 };
 
-export default Header;
+export default Navbar;

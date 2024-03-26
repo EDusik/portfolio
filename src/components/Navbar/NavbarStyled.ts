@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const HeaderStyled = styled.div`
+export const NavbarStyled = styled.div`
 	.header {
 		.transparent {
 			background-color: ${props => props.theme.navbar_background};
@@ -80,7 +80,7 @@ export const HeaderStyled = styled.div`
 			}
 		}
 
-		.switch {
+		.language-switch {
 			display: flex;
 			align-items: center;
 			width: 20%;
