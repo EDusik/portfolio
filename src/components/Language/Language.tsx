@@ -20,14 +20,14 @@ const Language = () => {
                 className={isCurrentLanguage('pt_br') ? "language-selected" : ""}
                 aria-label="Change language to Portuguese"
             >
-                {emojis.unicode(BRAZIL_FLAG)}
+                {BRAZIL_FLAG}
             </LanguageButtonStyled>
             <LanguageButtonStyled 
                 onClick={() => changeLanguage('en')} 
                 className={isCurrentLanguage('en') ? "language-selected" : ""}
                 aria-label="Change language to English"
             >
-                {emojis.unicode(USA_FLAG)}
+                {USA_FLAG}
             </LanguageButtonStyled>
         </LanguageStyled>
 	);
