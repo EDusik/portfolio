@@ -7,6 +7,7 @@ import { useScroll } from "../../hooks/useScroll";
 import { IContextProps } from "../../context/types/Context.types";
 import { useTranslation } from 'react-i18next';
 
+import Language from "./Language/Language";
 import TogglerSwitch from "./Switch/Switch";
 
 interface INavbarProps {
@@ -42,7 +43,10 @@ const Navbar = ({ toggleTheme }: INavbarProps) => {
 								</li>
 							</ul>
 						</nav>
-						<TogglerSwitch toggleTheme={() => toggleTheme} />
+						<div className="language-switch">
+							<Language />
+							<TogglerSwitch toggleTheme={() => toggleTheme} />
+						</div>
 					</div>
 				</header>
 			)}
