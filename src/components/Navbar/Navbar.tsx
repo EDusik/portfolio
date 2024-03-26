@@ -11,7 +11,7 @@ import Language from "./Language/Language";
 import TogglerSwitch from "./Switch/Switch";
 
 interface INavbarProps {
-	toggleTheme: string | boolean | (() => void)
+	toggleTheme: () => void;
 }
 
 const Navbar = ({ toggleTheme }: INavbarProps) => {
