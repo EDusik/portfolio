@@ -1,3 +1,5 @@
+import { emojify } from 'node-emoji';
+
 import { LANG_COLORS } from '@/lib/constants/langColors';
 
 export type ProjectTag = 'web' | 'tooling' | 'oss';
@@ -44,14 +46,29 @@ type GitHubRepo = {
   updated_at: string;
 };
 
+/** Strips chars that can break RSC payloads or look odd in the UI when sourced from GitHub. */
+function safeText(s: string): string {
+  return s.replace(/\u0000/g, '').replace(/\u2028|\u2029/g, ' ');
+}
+
+function parseGitHubReposBody(text: string): GitHubRepo[] {
+  const trimmed = text.replace(/^\uFEFF/, '').trim();
+  const withoutXssi = trimmed.replace(/^\)\]\}',?\s*/, '');
+  const parsed: unknown = JSON.parse(withoutXssi);
+  if (!Array.isArray(parsed)) throw new Error('GitHub JSON is not an array');
+  return parsed as GitHubRepo[];
+}
+
 export async function fetchRepos(): Promise<Project[]> {
   try {
-    const res = await fetch(
-      'https://api.github.com/users/EDusik/repos?sort=updated&per_page=60',
-      { next: { revalidate: 3600 } },
-    );
+    const res = await fetch('https://api.github.com/users/EDusik/repos?sort=updated&per_page=60', {
+      next: { revalidate: 3600 },
+    });
     if (!res.ok) throw new Error(`GitHub status ${res.status}`);
-    const data = (await res.json()) as GitHubRepo[];
+    const text = await res.text();
+    const trimmed = text.replace(/^\uFEFF/, '').trim();
+    if (trimmed.startsWith('<')) throw new Error('GitHub returned HTML instead of JSON');
+    const data = parseGitHubReposBody(trimmed);
     const projects: Project[] = data
       .filter((r) => !r.fork && !r.archived)
       .sort(
@@ -63,16 +80,18 @@ export async function fetchRepos(): Promise<Project[]> {
         const topics = r.topics ?? [];
         let tag: ProjectTag = 'web';
         if (topics.some((t) => /cli|tool|script/.test(t))) tag = 'tooling';
-        else if (r.license || topics.includes('open-source') || r.stargazers_count >= 5) tag = 'oss';
+        else if (r.license || topics.includes('open-source') || r.stargazers_count >= 5)
+          tag = 'oss';
+        const desc = emojify(safeText(r.description || '—'));
         return {
-          name: r.name,
-          desc_en: r.description || '—',
-          desc_pt: r.description || '—',
-          url: r.html_url,
+          name: safeText(r.name),
+          desc_en: desc,
+          desc_pt: desc,
+          url: safeText(r.html_url),
           stack: topics.length
-            ? topics.slice(0, 4)
-            : [String(r.language || 'code').toLowerCase()],
-          lang: r.language || '—',
+            ? topics.slice(0, 4).map((t) => safeText(String(t)))
+            : [safeText(String(r.language || 'code').toLowerCase())],
+          lang: safeText(r.language || '—'),
           langColor: LANG_COLORS[r.language ?? ''] ?? '#888',
           stars: r.stargazers_count,
           forks: r.forks_count,
