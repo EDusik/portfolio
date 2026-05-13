@@ -1,0 +1,21 @@
+@use '../../../styles/tokens/breakpoints' as bp;
+
+.gutter {
+  text-align: right;
+  padding: var(--space-22) var(--space-12) var(--space-22) var(--space-8);
+  color: var(--muted-2);
+  user-select: none;
+  border-right: var(--border-width-1) solid var(--border-soft);
+  background: var(--bg);
+  font-variant-numeric: tabular-nums;
+}
+
+.gutter span {
+  display: block;
+}
+
+@media (max-width: bp.$bp-mobile) {
+  .gutter {
+    padding: var(--space-18) var(--space-6);
+  }
+}

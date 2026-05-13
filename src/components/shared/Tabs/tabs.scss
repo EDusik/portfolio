@@ -1,0 +1,112 @@
+@use '../../../styles/tokens/breakpoints' as bp;
+
+.tabs {
+  display: flex;
+  background: var(--panel-2);
+  border-bottom: var(--border-width-1) solid var(--border-soft);
+  overflow: auto hidden;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  padding: var(--space-0) var(--space-20) var(--space-0) var(--space-22);
+  height: var(--tab-h);
+  border-right: var(--border-width-1) solid var(--border-soft);
+  font-size: var(--font-size-14);
+  color: var(--muted);
+  background: var(--tab-inactive);
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+  min-width: var(--space-140);
+  max-width: var(--space-320);
+}
+
+.tab .lbl {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab .close {
+  width: var(--space-16);
+  height: var(--space-16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-4);
+  color: transparent;
+}
+
+.tab:hover .close {
+  color: var(--muted);
+}
+
+.tab .close:hover {
+  background: var(--panel-2);
+  color: var(--text);
+}
+
+.tab.dirty .close {
+  color: var(--muted);
+}
+
+.tab.dirty .close::before {
+  content: '';
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--border-radius-full);
+  background: var(--text-2);
+}
+
+.tab.dirty:hover .close::before {
+  display: none;
+}
+
+.tab.active {
+  background: var(--tab-active);
+  color: var(--text);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--accent);
+}
+
+.tab .ficon {
+  display: inline-flex;
+  width: var(--space-28);
+  justify-content: center;
+}
+
+.breadcrumbs {
+  display: none;
+}
+
+@media (max-width: bp.$bp-mobile) {
+  .tabs {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .tab {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    padding: var(--space-0) var(--space-10);
+    justify-content: center;
+  }
+}

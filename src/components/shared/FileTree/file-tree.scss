@@ -1,0 +1,105 @@
+.tree {
+  padding: var(--space-4) var(--space-6) var(--space-12);
+  overflow: auto;
+  flex: 1;
+  font-family: var(--font-mono);
+  font-feature-settings:
+    'calt' 1,
+    'liga' 1,
+    'tnum' 1,
+    'zero' 1;
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.tree-section {
+  font-size: var(--font-size-15);
+  color: var(--text-2);
+  user-select: none;
+  font-weight: 400;
+  letter-spacing: normal;
+  font-variant-ligatures: contextual common-ligatures;
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--border-radius-4);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  line-height: 1.5;
+}
+
+.tree-row .chev {
+  width: var(--space-18);
+  display: inline-flex;
+  justify-content: center;
+  color: var(--muted);
+  transition: transform 0.15s var(--ease);
+}
+
+.tree-row.open .chev {
+  transform: rotate(90deg);
+}
+
+.tree-row .ficon {
+  width: var(--space-22);
+  display: inline-flex;
+  justify-content: center;
+}
+
+.tree-row .lbl {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-15);
+  color: var(--text-2);
+  font-variant-ligatures: contextual common-ligatures;
+}
+
+.tree-row:not(.file) .lbl {
+  font-size: var(--font-size-12);
+  font-weight: 450;
+}
+
+.tree-row:hover {
+  background: var(--panel-2);
+}
+
+.tree-row.file:not(.active),
+.tree-row.file:not(.active):hover {
+  background: transparent;
+}
+
+.tree-row.file.active {
+  background: color-mix(in oklch, var(--text) 5%, var(--panel-2));
+}
+
+.tree-row.file.active:hover {
+  background: color-mix(in oklch, var(--text) 7%, var(--panel-2));
+}
+
+.tree-row.file.active .lbl {
+  color: var(--text);
+}
+
+.tree-children {
+  padding-left: var(--space-14);
+}
+
+.tree-children.collapsed {
+  display: none;
+}
+
+.dot {
+  width: var(--space-6);
+  height: var(--space-6);
+  border-radius: var(--border-radius-full);
+  margin-left: auto;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tree-row.dirty .dot {
+  opacity: 1;
+}
