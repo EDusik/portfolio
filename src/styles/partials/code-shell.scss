@@ -1,0 +1,77 @@
+@use '../tokens/breakpoints' as bp;
+
+.pages {
+  position: relative;
+  overflow: auto;
+  min-height: 0;
+  scroll-behavior: smooth;
+}
+
+.page {
+  display: block;
+  scroll-margin-top: 0;
+  border-bottom: var(--border-width-1) dashed var(--border-soft);
+}
+
+.page:last-child {
+  border-bottom: 0;
+}
+
+.codepane {
+  display: grid;
+  grid-template-columns: var(--space-52) 1fr;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-13-5);
+  line-height: 1.75;
+  min-height: calc(100vh - var(--top-h) - var(--tab-h) - var(--status-h));
+}
+
+.code {
+  padding: var(--space-22) var(--space-28) var(--space-30);
+  color: var(--text-2);
+  min-width: 0;
+}
+
+.code .com {
+  color: var(--syn-comment);
+  font-style: italic;
+}
+
+.code .kw {
+  color: var(--syn-keyword);
+}
+
+.code .st {
+  color: var(--syn-string);
+}
+
+.code .nu {
+  color: var(--syn-number);
+}
+
+.code .fn {
+  color: var(--syn-fn);
+}
+
+.code .va {
+  color: var(--syn-var);
+}
+
+.code .pu {
+  color: var(--syn-punct);
+}
+
+.code .ty {
+  color: var(--syn-type);
+}
+
+@media (max-width: bp.$bp-mobile) {
+  .code {
+    padding: var(--space-18) var(--space-18) var(--space-50);
+  }
+
+  .codepane {
+    grid-template-columns: var(--space-36) 1fr;
+    font-size: var(--font-size-13);
+  }
+}

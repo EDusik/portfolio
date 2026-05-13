@@ -1,8 +1,8 @@
 :root {
-  --font-mono: var(--font-jetbrains-mono), 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono:
+    var(--font-jetbrains-mono), 'Fira Code', ui-monospace, sfmono-regular, menlo, monospace;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --radius: 6px;
-  --tab-h: 36px;
+  --tab-h: 40px;
   --top-h: 36px;
   --status-h: 26px;
   --sidebar-w: 264px;

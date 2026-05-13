@@ -7,7 +7,7 @@
 }
 
 @mixin desktop {
-  @media (min-width: calc(#{bp.$bp-mobile} + 1px)) {
+  @media (width >= calc(#{bp.$bp-mobile} + 1px)) {
     @content;
   }
 }
