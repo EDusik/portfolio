@@ -1,0 +1,120 @@
+@use '../../styles/tokens/breakpoints' as bp;
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--top-h) - var(--tab-h) - var(--status-h));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-feature-settings:
+    'calt' 1,
+    'liga' 1,
+    'tnum' 1,
+    'zero' 1;
+  font-variant-numeric: tabular-nums slashed-zero;
+}
+
+.hero canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-64) 6vw;
+  max-width: 980px;
+  width: 100%;
+}
+
+.hero h1 {
+  font-family: var(--font-mono);
+  font-size: clamp(var(--font-size-36), 6.5vw, var(--font-size-78));
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: var(--space-0) var(--space-0) var(--space-20);
+  font-weight: 500;
+  color: var(--text);
+  font-variant-ligatures: contextual common-ligatures;
+}
+
+.hero h1 .accent {
+  color: var(--accent);
+}
+
+.hero h1 .accent-2 {
+  color: var(--accent-2);
+}
+
+.hero h1 .caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 0.95em;
+  background: var(--accent);
+  vertical-align: -0.08em;
+  margin-left: var(--space-4);
+  animation: caret 1s steps(2) infinite;
+}
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero p.lede {
+  font-size: clamp(var(--font-size-15), 1.6vw, var(--font-size-18));
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 640px;
+  margin: var(--space-0) var(--space-0) var(--space-32);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8) var(--space-14);
+  font-size: var(--font-size-12);
+  color: var(--muted);
+  margin-bottom: var(--space-36);
+}
+
+.hero-meta .kv {
+  display: inline-flex;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.hero-meta .kv b {
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      80% 60% at 50% 100%,
+      color-mix(in oklch, var(--bg) 0%, transparent),
+      var(--bg) 90%
+    ),
+    radial-gradient(
+      60% 50% at 50% 0%,
+      color-mix(in oklch, var(--bg) 0%, transparent),
+      var(--bg) 90%
+    );
+  opacity: 0.6;
+}
+
+@media (max-width: bp.$bp-mobile) {
+  .hero-content {
+    padding: var(--space-48) var(--space-24);
+  }
+}

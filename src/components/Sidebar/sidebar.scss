@@ -1,0 +1,93 @@
+@use '../../styles/tokens/breakpoints' as bp;
+
+.activity {
+  background: var(--activity);
+  border-right: var(--border-width-1) solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-8) var(--space-0);
+  gap: var(--space-4);
+}
+
+.activity .ab {
+  width: var(--space-36);
+  height: var(--space-36);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  border-radius: var(--border-radius-6);
+  position: relative;
+}
+
+.activity .ab:hover {
+  color: var(--text);
+}
+
+.activity .ab.active {
+  color: var(--text);
+}
+
+.activity .ab.active::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--space-8) * -1);
+  top: var(--space-6);
+  bottom: var(--space-6);
+  width: var(--space-2);
+  background: var(--accent);
+  border-radius: var(--border-radius-2);
+}
+
+.activity .spacer {
+  flex: 1;
+}
+
+.sidebar {
+  font-family: var(--font-mono);
+  font-feature-settings:
+    'calt' 1,
+    'liga' 1,
+    'tnum' 1,
+    'zero' 1;
+  font-variant-numeric: tabular-nums slashed-zero;
+  background: var(--sidebar);
+  border-right: var(--border-width-1) solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+body.sidebar-collapsed .sidebar {
+  transform: translateX(-100%);
+  pointer-events: none;
+  border-right-color: transparent;
+}
+
+@media (max-width: bp.$bp-mobile) {
+  .activity {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: var(--top-h);
+    bottom: var(--status-h);
+    left: 0;
+    width: var(--sidebar-w);
+    max-width: var(--space-320);
+    transform: translateX(-100%);
+    transition: transform 0.25s var(--ease);
+    z-index: 50;
+    box-shadow: var(--sidebar-overlay-shadow);
+  }
+
+  body.menu-open .sidebar {
+    transform: translateX(0);
+  }
+}

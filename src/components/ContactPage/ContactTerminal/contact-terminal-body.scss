@@ -1,0 +1,52 @@
+.term-body {
+  padding: var(--space-16) var(--space-18) var(--space-22);
+  font-size: var(--font-size-13-5);
+  line-height: 1.85;
+  color: var(--text-2);
+}
+
+.term-body .pr {
+  color: var(--accent);
+  margin-right: var(--space-8);
+  user-select: none;
+}
+
+.term-body .cmd {
+  color: var(--text);
+}
+
+.term-body .ok {
+  color: var(--syn-string);
+}
+
+.term-body .warn {
+  color: var(--accent-2);
+}
+
+.term-body .com {
+  color: var(--syn-comment);
+  font-style: italic;
+}
+
+.term-body a {
+  color: var(--accent);
+}
+
+.term-body a:hover {
+  text-decoration: underline;
+}
+
+@keyframes term-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.term-cursor {
+  animation: term-cursor-blink 1s step-end infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .term-cursor {
+    animation: none;
+  }
+}

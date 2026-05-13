@@ -1,0 +1,46 @@
+@use '../../styles/tokens/breakpoints' as bp;
+
+.ide {
+  display: grid;
+  grid-template-rows: var(--top-h) 1fr var(--status-h);
+  height: 100vh;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  min-height: 0;
+  transition: grid-template-columns 0.25s var(--ease);
+}
+
+body.sidebar-collapsed .main {
+  grid-template-columns: var(--space-0) 1fr;
+}
+
+.scrim {
+  display: none;
+}
+
+@media (max-width: bp.$bp-mobile) {
+  :root {
+    --activity-w: var(--space-0);
+    --sidebar-w: 78vw;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  body.sidebar-collapsed .main {
+    grid-template-columns: 1fr;
+  }
+
+  body.menu-open .scrim {
+    display: block;
+    position: fixed;
+    inset: var(--top-h) 0 var(--status-h) 0;
+    z-index: 40;
+    background: color-mix(in oklch, var(--bg-deep) 60%, transparent);
+    backdrop-filter: blur(2px);
+  }
+}
