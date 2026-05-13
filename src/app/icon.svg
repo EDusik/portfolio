@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ED">
+  <rect width="32" height="32" rx="7" fill="oklch(0.12 0.012 275)" />
+  <text
+    x="5.25"
+    y="21"
+    text-anchor="start"
+    font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Courier New', monospace"
+    font-size="13"
+    font-weight="700"
+    letter-spacing="-0.2"
+    fill="oklch(0.78 0.14 215)"
+    stroke="oklch(0.1 0.02 275)"
+    stroke-width="1.15"
+    paint-order="stroke fill"
+  >
+    ED
+  </text>
+  <rect
+    x="20.75"
+    y="23.25"
+    width="6.75"
+    height="2.35"
+    rx="0.55"
+    fill="oklch(0.78 0.14 215)"
+  />
+</svg>
