@@ -10,6 +10,11 @@ export function useScrollSpy(
   activeTab: TabFile,
 ) {
   const raf = useRef<number | null>(null);
+  const activeTabRef = useRef(activeTab);
+  const onTabChangeRef = useRef(onTabChange);
+
+  activeTabRef.current = activeTab;
+  onTabChangeRef.current = onTabChange;
 
   useEffect(() => {
     if (!container) return;
@@ -25,7 +30,7 @@ export function useScrollSpy(
         if (top - refLine <= 0) chosen = s;
       }
       const name = SCROLL_SPY_MAP[chosen.id];
-      if (name && name !== activeTab) onTabChange(name);
+      if (name && name !== activeTabRef.current) onTabChangeRef.current(name);
     };
 
     const onScroll = () => {
@@ -40,5 +45,5 @@ export function useScrollSpy(
       container.removeEventListener('scroll', onScroll);
       if (raf.current != null) cancelAnimationFrame(raf.current);
     };
-  }, [container, onTabChange, activeTab]);
+  }, [container]);
 }

@@ -1,16 +1,20 @@
 'use client';
 
-import { dictionaries } from '@/lib/i18n/dictionaries';
-import type { DictKey, Locale } from '@/lib/i18n/types';
 import {
   createContext,
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useMemo,
   useState,
   type ReactNode,
 } from 'react';
+
+import { dictionaries } from '@/lib/i18n/dictionaries';
+import type { DictKey, Locale } from '@/lib/i18n/types';
+
+const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 type I18nContextValue = {
   lang: Locale;
@@ -30,37 +34,28 @@ function readStoredLang(): Locale {
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Locale>('pt');
 
-  useEffect(() => {
+  useIsoLayoutEffect(() => {
     setLangState(readStoredLang());
   }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    document.title = dictionaries[lang].pageTitle;
     try {
       localStorage.setItem('lang', lang);
-    } catch {
-      /* ignore */
-    }
+    } catch {}
   }, [lang]);
 
   const setLang = useCallback((l: Locale) => setLangState(l), []);
-  const toggleLang = useCallback(
-    () => setLangState((prev) => (prev === 'pt' ? 'en' : 'pt')),
-    [],
-  );
+  const toggleLang = useCallback(() => setLangState((prev) => (prev === 'pt' ? 'en' : 'pt')), []);
 
   const t = useCallback(
     (key: DictKey) =>
-      (dictionaries[lang] as Record<string, string>)[key] ??
-      dictionaries.en[key] ??
-      String(key),
+      (dictionaries[lang] as Record<string, string>)[key] ?? dictionaries.en[key] ?? String(key),
     [lang],
   );
 
-  const value = useMemo(
-    () => ({ lang, setLang, toggleLang, t }),
-    [lang, setLang, toggleLang, t],
-  );
+  const value = useMemo(() => ({ lang, setLang, toggleLang, t }), [lang, setLang, toggleLang, t]);
 
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
 }

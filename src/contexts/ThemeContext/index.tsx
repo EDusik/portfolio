@@ -37,9 +37,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     document.documentElement.dataset.theme = theme;
     try {
       localStorage.setItem('theme', theme);
-    } catch {
-      /* ignore */
-    }
+    } catch {}
     window.dispatchEvent(new CustomEvent<Theme>('themechange', { detail: theme }));
   }, [theme]);
 
@@ -49,10 +47,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     [],
   );
 
-  const value = useMemo(
-    () => ({ theme, setTheme, toggleTheme }),
-    [theme, setTheme, toggleTheme],
-  );
+  const value = useMemo(() => ({ theme, setTheme, toggleTheme }), [theme, setTheme, toggleTheme]);
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }

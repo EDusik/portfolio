@@ -1,7 +1,5 @@
 'use client';
 
-import { FILES, OPEN_TABS, type TabFile } from '@/lib/constants/files';
-import { fileToPageId } from '@/lib/constants/sections';
 import {
   createContext,
   useCallback,
@@ -11,6 +9,9 @@ import {
   useState,
   type ReactNode,
 } from 'react';
+
+import { FILES, OPEN_TABS, type TabFile } from '@/lib/constants/files';
+import { fileToPageId } from '@/lib/constants/sections';
 
 type TabsContextValue = {
   activeTab: TabFile;
@@ -24,7 +25,7 @@ type TabsContextValue = {
 const TabsContext = createContext<TabsContextValue | null>(null);
 
 export function TabsProvider({ children }: { children: ReactNode }) {
-  const [activeTab, setActiveTab] = useState<TabFile>('home.js');
+  const [activeTab, setActiveTab] = useState<TabFile>('hero.js');
   const scrollRef = useRef<HTMLElement | null>(null);
 
   const registerScrollContainer = useCallback((el: HTMLElement | null) => {
