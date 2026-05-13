@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
         <Script
           id="theme-flash"
@@ -43,7 +43,7 @@ export default function RootLayout({
           id="title-lang"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: `try{var l=localStorage.getItem('lang');document.title=l==='en'?${JSON.stringify(dictionaries.en.pageTitle)}:${JSON.stringify(dictionaries.pt.pageTitle)};}catch(e){}`,
+            __html: `try{var l=localStorage.getItem('lang');document.title=l==='pt'?${JSON.stringify(dictionaries.pt.pageTitle)}:${JSON.stringify(dictionaries.en.pageTitle)};}catch(e){}`,
           }}
         />
         <AppProviders>{children}</AppProviders>

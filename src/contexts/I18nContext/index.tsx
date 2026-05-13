@@ -26,13 +26,13 @@ type I18nContextValue = {
 const I18nContext = createContext<I18nContextValue | null>(null);
 
 function readStoredLang(): Locale {
-  if (typeof window === 'undefined') return 'pt';
+  if (typeof window === 'undefined') return 'en';
   const v = localStorage.getItem('lang');
-  return v === 'en' || v === 'pt' ? v : 'pt';
+  return v === 'en' || v === 'pt' ? v : 'en';
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Locale>('pt');
+  const [lang, setLangState] = useState<Locale>('en');
 
   useIsoLayoutEffect(() => {
     setLangState(readStoredLang());
