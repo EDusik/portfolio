@@ -23,7 +23,12 @@
   font-family: var(--font-mono);
   font-size: var(--font-size-13-5);
   line-height: 1.75;
-  min-height: calc(100vh - var(--top-h) - var(--tab-h) - var(--status-h));
+  min-height: calc(
+    100vh - var(--top-h) - var(--tab-h) - var(--status-h) - env(safe-area-inset-bottom, 0px)
+  );
+  min-height: calc(
+    100dvh - var(--top-h) - var(--tab-h) - var(--status-h) - env(safe-area-inset-bottom, 0px)
+  );
 }
 
 .code {

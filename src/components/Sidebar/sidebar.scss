@@ -77,7 +77,7 @@ body.sidebar-collapsed .sidebar {
   .sidebar {
     position: fixed;
     top: var(--top-h);
-    bottom: var(--status-h);
+    bottom: calc(var(--status-h) + env(safe-area-inset-bottom, 0px));
     left: 0;
     width: var(--sidebar-w);
     max-width: var(--space-320);

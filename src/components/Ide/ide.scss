@@ -2,8 +2,9 @@
 
 .ide {
   display: grid;
-  grid-template-rows: var(--top-h) 1fr var(--status-h);
+  grid-template-rows: var(--top-h) 1fr calc(var(--status-h) + env(safe-area-inset-bottom, 0px));
   height: 100vh;
+  height: 100dvh;
 }
 
 .main {
@@ -38,7 +39,7 @@ body.sidebar-collapsed .main {
   body.menu-open .scrim {
     display: block;
     position: fixed;
-    inset: var(--top-h) 0 var(--status-h) 0;
+    inset: var(--top-h) 0 calc(var(--status-h) + env(safe-area-inset-bottom, 0px)) 0;
     z-index: 40;
     background: color-mix(in oklch, var(--bg-deep) 60%, transparent);
     backdrop-filter: blur(2px);
