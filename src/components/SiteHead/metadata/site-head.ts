@@ -13,15 +13,16 @@ function metadataBaseUrl(): URL {
 
 export const siteViewport: Viewport = {
   themeColor: '#6272a4',
+  viewportFit: 'cover',
 };
 
-const defaultTitle = dictionaries.pt.pageTitle;
+const defaultTitle = dictionaries.en.pageTitle;
 
 export const siteMetadata: Metadata = {
   metadataBase: metadataBaseUrl(),
   title: defaultTitle,
-  description: 'Eduardo Dusik - Desenvolvedor Front-End',
-  keywords: ['eduardo', 'dusik', 'desenvolvedor', 'front-end', 'portfólio', 'dev'],
+  description: 'Eduardo Dusik - Front-End Engineer',
+  keywords: ['eduardo', 'dusik', 'developer', 'front-end', 'portfolio', 'web'],
   authors: [{ name: 'Eduardo Dusik' }],
   manifest: '/static/manifest.json',
   icons: {
@@ -31,8 +32,8 @@ export const siteMetadata: Metadata = {
   openGraph: {
     type: 'website',
     title: defaultTitle,
-    description: 'Eduardo Dusik - Desenvolvedor Front-End',
-    siteName: 'Eduardo Dusik - Desenvolvedor Front-End',
+    description: 'Eduardo Dusik - Front-End Engineer',
+    siteName: 'Eduardo Dusik - Front-End Engineer',
     images: [
       {
         url: '/static/logo192.png',
@@ -43,7 +44,7 @@ export const siteMetadata: Metadata = {
     ],
   },
   other: {
-    language: 'PT',
+    language: 'EN',
     title: defaultTitle,
   },
 };
