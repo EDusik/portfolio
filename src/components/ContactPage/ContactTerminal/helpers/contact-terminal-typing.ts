@@ -34,7 +34,7 @@ export function makeSteps(c: typeof CONTACT): Step[] {
     { kind: 'ok', rest: 'handshake complete', speed: 24, gap: 220 },
     { kind: 'ok', rest: 'reply window: usually < 24h', speed: 22, gap: 240 },
     { kind: 'blank', gap: 380 },
-    { kind: 'prompt', cmd: 'cat ./inbox.txt', speed: 36, gap: 220 },
+    { kind: 'prompt', cmd: '~/contact.sh', speed: 36, gap: 220 },
     {
       kind: 'inbox',
       prefix: '→ linkedin ',

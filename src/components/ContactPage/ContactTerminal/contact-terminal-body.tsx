@@ -32,7 +32,7 @@ function StaticTerminalBody() {
       <br />
       <div>
         <span className="pr">$</span>
-        <span className="cmd">cat ./inbox.txt</span>
+        <span className="cmd">~/contact.sh</span>
       </div>
       <div>
         → linkedin{' '}
