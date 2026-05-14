@@ -2,7 +2,6 @@
 
 import type { ReactNode } from 'react';
 
-import { SiteLoading } from '@/components/shared';
 import { I18nProvider } from '@/contexts/I18nContext';
 import { TabsProvider } from '@/contexts/TabsContext';
 import { ThemeProvider } from '@/contexts/ThemeContext';
@@ -14,10 +13,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
     <div className="app-providers">
       <ThemeProvider>
         <I18nProvider>
-          <TabsProvider>
-            <SiteLoading />
-            {children}
-          </TabsProvider>
+          <TabsProvider>{children}</TabsProvider>
         </I18nProvider>
       </ThemeProvider>
     </div>
