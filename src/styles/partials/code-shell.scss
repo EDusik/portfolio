@@ -21,7 +21,7 @@
   display: grid;
   grid-template-columns: var(--space-52) 1fr;
   font-family: var(--font-mono);
-  font-size: var(--font-size-13-5);
+  font-size: var(--font-size-14);
   line-height: 1.75;
   min-height: calc(
     100vh - var(--top-h) - var(--tab-h) - var(--status-h) - env(safe-area-inset-bottom, 0px)
@@ -77,6 +77,6 @@
 
   .codepane {
     grid-template-columns: var(--space-36) 1fr;
-    font-size: var(--font-size-13);
+    font-size: var(--font-size-14);
   }
 }
